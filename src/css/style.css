@@ -29,6 +29,21 @@
     transform: scale(1.05);
 }
 
+.brand-nombre {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.navbar-brand:hover .brand-nombre {
+    transform: scale(1.05);
+}
+
+/* Quita el efecto de hover de los spans individuales */
+.brand-tecnosur,
+.brand-parana {
+    transition: none;
+}
+
 .brand-tecnosur {
     font-size: 2.3rem;
     font-weight: 800;
