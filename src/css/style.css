@@ -7,17 +7,17 @@
     background: none;
     padding: 0.3em 1em;
     border-radius: 0.7em;
-    /* Quitar el efecto general */
+    
     transition: none;
 }
 
 .navbar-brand:hover {
-    /* Quitar el efecto general */
+   
     transform: none;
     text-decoration: none;
 }
 
-/* Efecto solo en el texto de la empresa */
+
 .brand-tecnosur,
 .brand-parana {
     transition: transform 0.2s;
@@ -38,7 +38,7 @@
     transform: scale(1.05);
 }
 
-/* Quita el efecto de hover de los spans individuales */
+
 .brand-tecnosur,
 .brand-parana {
     transition: none;
@@ -90,4 +90,20 @@
 .card.testimonio-card:focus-within {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+}
+
+.testimonios-shadow {
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonios-shadow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 5px;
+    background: linear-gradient(to bottom, rgba(248,249,250,0) 0%, #fff 100%);
+    pointer-events: none;
 }
