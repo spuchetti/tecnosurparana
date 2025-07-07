@@ -104,7 +104,7 @@
     display: flex;
     gap: 20px;
     padding: 10px;
-    animation: scroll 120s linear infinite; /* Aumentado de 90s a 120s */
+    animation: scroll 120s linear infinite;
     width: max-content;
     will-change: transform;
 }
@@ -169,6 +169,16 @@
     }
     100% {
         transform: translateX(calc(-50% - 10px));
+    }
+}
+
+/* Animación específica para móviles */
+@keyframes scroll-mobile {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 15px));
     }
 }
 
@@ -278,7 +288,7 @@
     .testimonios-track {
         padding: 10px 15px;
         gap: 20px;
-        animation-duration: 120s; /* Mantener consistencia en todos los dispositivos */
+        animation: scroll 120s linear infinite;
     }
 }
 
@@ -295,14 +305,8 @@
         height: 230px;
     }
     
-    @keyframes scroll {
-        100% {
-            transform: translateX(calc(-50% - 7.5px));
-        }
-    }
-    
     .testimonios-track {
-        animation-duration: 120s; /* Mantener consistencia en todos los dispositivos */
+        animation: scroll-mobile 120s linear infinite;
     }
 }
 
@@ -329,7 +333,7 @@
     }
     
     .testimonios-track {
-        animation-duration: 120s; /* Mantener consistencia en todos los dispositivos */
+        animation: scroll-mobile 120s linear infinite;
     }
 }
 
@@ -348,6 +352,6 @@
     }
     
     .testimonios-track {
-        animation-duration: 140s; /* Mantener consistencia en todos los dispositivos */
+        animation: scroll-mobile 120s linear infinite;
     }
 }
