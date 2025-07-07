@@ -2,13 +2,20 @@ import { testimonios } from './testimonios.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('testimonios-track');
-
-    // Duplica los testimonios para efecto infinito
-    const duplicatedTestimonios = [...testimonios, ...testimonios];
-
-    duplicatedTestimonios.forEach((testimonio) => {
+    
+    // Limpiar cualquier contenido existente
+    track.innerHTML = '';
+    
+    // Duplica los testimonios para efecto infinito suave
+    const duplicatedTestimonios = [...testimonios, ...testimonios, ...testimonios];
+    
+    // Configuración CSS inicial para asegurar animación inmediata
+    track.style.animation = 'none';
+    track.style.opacity = '1';
+    
+    duplicatedTestimonios.forEach((testimonio, index) => {
         const card = document.createElement('div');
-        card.className = 'testimonio-card card shadow-sm h-100 bg-white border-0';
+        card.className = 'testimonio-card';
         card.innerHTML = `
             <div class="card-body d-flex flex-column">
                 <div class="mb-2 text-warning">
@@ -26,5 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         track.appendChild(card);
+        
+        // Forzar renderizado inmediato
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+    });
+    
+    // Iniciar animación después de un breve retraso para asegurar que el DOM esté listo
+    setTimeout(() => {
+        track.style.animation = 'scroll 40s linear infinite';
+        track.style.willChange = 'transform';
+    }, 50);
+    
+    
+    track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
     });
 });

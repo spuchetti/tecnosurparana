@@ -79,6 +79,7 @@
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
 }
 
+/* Sección Testimonios - Versión Mejorada */
 .testimonios-shadow {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
     position: relative;
@@ -103,10 +104,73 @@
     display: flex;
     gap: 20px;
     padding: 10px;
-    animation: scroll 90s linear infinite;
+    animation: scroll 40s linear infinite;
     width: max-content;
+    will-change: transform;
 }
 
+.testimonio-card {
+    flex: 0 0 350px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.testimonio-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.testimonio-card .card-text {
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.testimonio-card .text-warning {
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.2);
+}
+
+.testimonio-card img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.testimonio-card .d-flex {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 10px));
+    }
+}
 
 .card.servicio-card {
     opacity: 0;
@@ -156,7 +220,7 @@
 
 .whatsapp-float {
     position: fixed;
-    bottom: 80px; /* Cambiado de 24px a 80px */
+    bottom: 80px;
     right: 24px;
     background: #25d366;
     color: #fff;
@@ -172,80 +236,22 @@
     transition: all 0.3s ease;
 }
 
-
 .whatsapp-float:hover {
     background: #1ebe57;
-    transform: scale(1.1); /* Efecto de escala al hover */
+    transform: scale(1.1);
 }
 
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-100% - 20px));
-    }
-}
-
-.testimonio-card {
-    flex: 0 0 350px;
-    min-height: 230px;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    height: 300px;
-}
-
-.testimonio-card .card-body {
-   flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-}
-
-.testimonio-card .card-text {
-    flex: 1;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    margin-bottom: 1rem;
-    line-height: 1.4;
-}
-
-.testimonio-card .text-warning {
-    margin-bottom: 1rem;
-    flex-shrink: 0;
-}
-
-.testimonio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.2);
-}
-
-.testimonio-card img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.testimonio-card .d-flex {
-    flex-shrink: 0;
-    margin-top: auto;
-}
-
-/* Animación de aparición */
+/* Animaciones */
 @keyframes fadeIn {
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -268,83 +274,48 @@
 }
 
 /* MEDIA QUERIES */
-
-/* Media Queries optimizadas */
 @media (max-width: 992px) {
     .testimonios-track {
         padding: 10px 15px;
-        display: flex;
         gap: 20px;
-        padding: 10px;
-        animation: scroll 90s linear infinite;
-        width: max-content;
-
     }
 }
 
 @media (max-width: 768px) {
     .whatsapp-float {
-        bottom: 70px; /* Un poco más bajo en móviles */
+        bottom: 70px;
         width: 50px;
         height: 50px;
         font-size: 1.8rem;
     }
 
-    .testimonios-track {
-        animation: scroll-mobile 90s linear infinite;
-        gap: 15px;
-        display: flex;
-        padding: 10px;
-        animation: scroll 90s linear infinite;
-        width: max-content;
-    }
-    
     .testimonio-card {
-        flex: 0 0 85vw;
-        height: auto;
-        min-height: 220px;
+        flex: 0 0 300px;
+        height: 230px;
     }
     
-    .testimonio-card .card-text {
-        -webkit-line-clamp: 4;
-        font-size: 0.95rem;
-    }
-    
-    @keyframes scroll-mobile {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-100% - 15px)); }
+    @keyframes scroll {
+        100% {
+            transform: translateX(calc(-50% - 7.5px));
+        }
     }
 }
 
 @media (max-width: 576px) {
     .whatsapp-float {
-        bottom: 60px; /* Posición final para móviles pequeños */
+        bottom: 60px;
     }
     
     .testimonios-shadow {
         padding: 1.5rem 0;
     }
     
-    .testimonios-track {
-        gap: 12px;
-        padding: 10px;
-        animation: scroll-mobile 90s linear infinite;
-        display: flex;
-        width: max-content;
-    }
-    
     .testimonio-card {
-        flex: 0 0 82vw;
-        min-height: 200px;
+        flex: 0 0 280px;
     }
     
     .testimonio-card .card-body {
         padding: 1.25rem;
-    }
-    
-    .testimonio-card .card-text {
-        -webkit-line-clamp: 3;
-        font-size: 0.9rem;
     }
     
     .testimonios-shadow h2 {
@@ -355,15 +326,7 @@
 
 @media (max-width: 480px) {
     .testimonio-card {
-        flex: 0 0 80vw;
-    }
-    
-    .testimonios-track {
-        gap: 10px;
-        padding: 10px;
-        animation: scroll-mobile 90s linear infinite;
-        display: flex;
-        width: max-content;
+        flex: 0 0 260px;
     }
     
     .testimonio-card .card-body {
@@ -375,4 +338,3 @@
         height: 40px;
     }
 }
-
