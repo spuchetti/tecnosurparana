@@ -273,6 +273,12 @@
 @media (max-width: 992px) {
     .testimonios-track {
         padding: 10px 15px;
+        display: flex;
+        gap: 20px;
+        padding: 10px;
+        animation: scroll 90s linear infinite;
+        width: max-content;
+
     }
 }
 
@@ -287,6 +293,10 @@
     .testimonios-track {
         animation: scroll-mobile 90s linear infinite;
         gap: 15px;
+        display: flex;
+        padding: 10px;
+        animation: scroll 90s linear infinite;
+        width: max-content;
     }
     
     .testimonio-card {
@@ -318,6 +328,9 @@
     .testimonios-track {
         gap: 12px;
         padding: 10px;
+        animation: scroll-mobile 90s linear infinite;
+        display: flex;
+        width: max-content;
     }
     
     .testimonio-card {
@@ -343,6 +356,14 @@
 @media (max-width: 480px) {
     .testimonio-card {
         flex: 0 0 80vw;
+    }
+    
+    .testimonios-track {
+        gap: 10px;
+        padding: 10px;
+        animation: scroll-mobile 90s linear infinite;
+        display: flex;
+        width: max-content;
     }
     
     .testimonio-card .card-body {
