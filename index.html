@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-primary position-relative overflow-hidden">
+    <!-- Reemplaza tu nav actual por este código -->
+    <nav class="navbar navbar-dark bg-primary navbar-expand-md position-relative overflow-hidden">
         <canvas id="snow-canvas"
             style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
         <div class="container position-relative" style="z-index:3;">
@@ -24,17 +25,27 @@
                     <span class="brand-parana">Paraná</span>
                 </span>
             </a>
-            <ul class="navbar-nav flex-row">
-                <li c>
-                    <a class="nav-link active px-3" aria-current="page" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3" href="nosotros.html">Sobre Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3" href="contacto.html">Contacto</a>
-                </li>
-            </ul>
+
+            <!-- Botón Hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active px-3" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="nosotros.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
