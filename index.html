@@ -225,6 +225,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="src/js/snow.js"></script>
     <script type="module" src="src/js/slider-testimonios.js"></script>
+    <script>
+        // Detectar touch en dispositivos móviles para pausar animación
+        const track = document.getElementById('testimonios-track');
+        if (track) {
+            track.addEventListener('touchstart', () => {
+                track.style.animationPlayState = 'paused';
+            });
+            track.addEventListener('touchend', () => {
+                track.style.animationPlayState = 'running';
+            });
+        }
+    </script>
 </body>
 
 </html>
