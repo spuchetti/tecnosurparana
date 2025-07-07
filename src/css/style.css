@@ -156,7 +156,7 @@
 
 .whatsapp-float {
     position: fixed;
-    bottom: 24px;
+    bottom: 80px; /* Cambiado de 24px a 80px */
     right: 24px;
     background: #25d366;
     color: #fff;
@@ -169,11 +169,13 @@
     font-size: 2rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     z-index: 9999;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
 }
+
 
 .whatsapp-float:hover {
     background: #1ebe57;
+    transform: scale(1.1); /* Efecto de escala al hover */
 }
 
 
@@ -275,6 +277,13 @@
 }
 
 @media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 70px; /* Un poco más bajo en móviles */
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+    }
+
     .testimonios-track {
         animation: scroll-mobile 90s linear infinite;
         gap: 15px;
@@ -298,6 +307,10 @@
 }
 
 @media (max-width: 576px) {
+    .whatsapp-float {
+        bottom: 60px; /* Posición final para móviles pequeños */
+    }
+    
     .testimonios-shadow {
         padding: 1.5rem 0;
     }
