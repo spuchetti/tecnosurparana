@@ -1,65 +1,4 @@
 /* Estilos base */
-.navbar {
-    box-shadow: none !important;
-    background-color: transparent !important;
-    position: relative;
-    z-index: 1;
-    overflow: visible !important;
-    padding: 0.5rem 1rem;
-}
-
-.navbar-container {
-    background-color: #1976d2;
-    width: 100%;
-    position: relative;
-    box-shadow: none !important;
-}
-
-.navbar-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
-/* Eliminar sombras y fondos no deseados */
-.navbar-nav .nav-link {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    color: rgba(255, 255, 255, 0.85) !important;
-    padding: 0.5rem 1rem;
-    margin: 0 0.25rem;
-    border-radius: 0.25rem;
-    transition: all 0.2s ease;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #fff !important;
-    transform: translateY(-1px);
-}
-
-/* Eliminar el efecto de "active" por defecto */
-.navbar-nav .nav-link.active {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    color: #fff !important;
-    font-weight: 500;
-}
-
-/* Asegurar que el navbar-collapse no tenga fondo blanco */
-.navbar-collapse {
-    background-color: transparent !important;
-}
-
-/* Corrección para el botón hamburguesa */
-.navbar-toggler {
-    background-color: transparent !important;
-    border: none !important;
-    padding: 0.5rem;
-}
-
 .navbar-brand {
     font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
     font-weight: 700;
@@ -70,7 +9,6 @@
     padding: 0.3em 1em;
     border-radius: 0.7em;
     transition: none;
-    margin-right: 1rem;
 }
 
 .navbar-brand:hover {
@@ -120,20 +58,6 @@
     display: inline-block;
 }
 
-/* Canvas de copos de nieve */
-#snow-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    transform: translateZ(0);
-    background: transparent;
-}
-
-/* Botones */
 .custom-btn-fixed {
     background-color: #1976d2 !important;
     border-color: #1976d2 !important;
@@ -155,50 +79,7 @@
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
 }
 
-/* Menú hamburguesa */
-.navbar-collapse {
-    position: relative;
-    z-index: 3;
-    background-color: #1976d2;
-    margin-top: 0;
-}
-
-.navbar-collapse.collapsing,
-.navbar-collapse.show {
-    border-radius: 0 0 0.7rem 0.7rem;
-    padding: 0.5rem 1rem;
-}
-
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-    margin-left: auto;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-    outline: none;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    width: 1.5em;
-    height: 1.5em;
-}
-
-/* Eliminar bordes redondeados en móviles */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        border-radius: 0 !important;
-    }
-    
-    .navbar-nav .nav-link {
-        margin: 0.25rem 0;
-        padding: 0.75rem 1rem;
-    }
-}
-
-/* Sección Testimonios */
+/* Sección Testimonios - Versión Mejorada */
 .testimonios-shadow {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
     position: relative;
@@ -223,7 +104,7 @@
     display: flex;
     gap: 20px;
     padding: 10px;
-    animation: scroll 200s linear infinite;
+    animation: scroll 40s linear infinite;
     width: max-content;
     will-change: transform;
 }
@@ -282,7 +163,15 @@
     margin-top: auto;
 }
 
-/* Servicios */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 10px));
+    }
+}
+
 .card.servicio-card {
     opacity: 0;
     transform: translateY(30px);
@@ -329,7 +218,6 @@
     margin-bottom: 2rem;
 }
 
-/* WhatsApp flotante */
 .whatsapp-float {
     position: fixed;
     bottom: 80px;
@@ -367,23 +255,22 @@
     }
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 10px));
-    }
+/* MENÚ HAMBURGUESA */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    margin-left: auto;
 }
 
-/* Animación específica para móviles */
-@keyframes scroll-mobile {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-60% - 15px));
-    }
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5em;
+    height: 1.5em;
 }
 
 /* MEDIA QUERIES */
@@ -391,7 +278,6 @@
     .testimonios-track {
         padding: 10px 15px;
         gap: 20px;
-        animation: scroll 200s linear infinite;
     }
 }
 
@@ -408,8 +294,10 @@
         height: 230px;
     }
     
-    .testimonios-track {
-        animation: scroll-mobile 200s linear infinite;
+    @keyframes scroll {
+        100% {
+            transform: translateX(calc(-50% - 7.5px));
+        }
     }
 }
 
@@ -434,10 +322,6 @@
         font-size: 1.5rem;
         padding: 0 1rem;
     }
-    
-    .testimonios-track {
-        animation: scroll-mobile 200s linear infinite;
-    }
 }
 
 @media (max-width: 480px) {
@@ -453,48 +337,4 @@
         width: 40px;
         height: 40px;
     }
-    
-    .testimonios-track {
-        animation: scroll-mobile 200s linear infinite;
-    }
-    
-    .navbar-brand {
-        font-size: 1.8rem;
-    }
-    
-    .brand-tecnosur {
-        font-size: 2rem;
-    }
-    
-    .brand-parana {
-        font-size: 1rem;
-    }
-}
-
-/* Corrección específica para móviles */
-@media (max-width: 991.98px) {
-    #snow-canvas {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        height: 100% !important;
-    }
-    
-    .navbar {
-        overflow: hidden !important;
-    }
-    
-    .navbar-container {
-        min-height: 56px; /* Altura mínima del navbar en móviles */
-    }
-}
-
-/* Asegurar que el canvas tenga las dimensiones correctas */
-#snow-canvas {
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
-    top: 0;
-    left: 0;
-    position: absolute;
 }

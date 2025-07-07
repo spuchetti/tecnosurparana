@@ -13,36 +13,38 @@
 
 <body>
     <!-- Reemplaza tu nav actual por este código -->
-    <nav class="navbar navbar-dark navbar-expand-md position-relative">
-        <div class="container-fluid navbar-container position-relative">
-            <canvas id="snow-canvas"></canvas>
-            <div class="navbar-content position-relative z-index-2 w-100">
-                <a class="navbar-brand" href="index.html">
-                    <img src="src/img/penguin.svg" alt="Pingüino"
-                        style="height: 2rem; vertical-align: middle; margin-right: 0.5em;">
-                    <span class="brand-nombre">
-                        <span class="brand-tecnosur">TecnoSur</span>
-                        <span class="brand-parana">Paraná</span>
-                    </span>
-                </a>
+    <nav class="navbar navbar-dark bg-primary navbar-expand-md position-relative overflow-hidden">
+        <canvas id="snow-canvas"
+            style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
+        <div class="container position-relative" style="z-index:3;">
+            <a class="navbar-brand" href="index.html">
+                <img src="src/img/penguin.svg" alt="Pingüino"
+                    style="height: 2rem; vertical-align: middle; margin-right: 0.5em;">
+                <span class="brand-nombre">
+                    <span class="brand-tecnosur">TecnoSur</span>
+                    <span class="brand-parana">Paraná</span>
+                </span>
+            </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <!-- Botón Hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link px-3" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-3" href="nosotros.html">Sobre Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-3" href="contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Menú colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active px-3" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="nosotros.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -214,14 +216,13 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <small>Politica de Privacidad | &copy; 2025 TecnoSur Paraná. Todos los derechos reservados.</small>
+                    <small>&copy; 2025 TecnoSur Paraná. Todos los derechos reservados.</small>
                 </div>
             </div>
         </div>
     </footer>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="src/js/navbar-snow.js"></script>
     <script type="module" src="src/js/snow.js"></script>
     <script type="module" src="src/js/slider-testimonios.js"></script>
     <script>
