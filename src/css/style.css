@@ -276,7 +276,7 @@
 
 @media (max-width: 768px) {
     .testimonios-track {
-        animation: scroll-mobile 50s linear infinite;
+        animation: scroll-mobile 90s linear infinite;
         gap: 15px;
     }
     
