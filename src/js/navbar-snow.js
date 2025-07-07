@@ -16,22 +16,35 @@ class NavbarSnow {
     }
 
     init() {
-        this.setCanvasSize();
-        this.setupEventListeners();
-        this.setupMenuObserver();
-        this.initialized = true;
+        // Esperar a que los estilos estén calculados
+        setTimeout(() => {
+            this.setCanvasSize();
+            this.setupEventListeners();
+            this.setupMenuObserver();
+            this.initialized = true;
+            
+            // Forzar redibujado inicial
+            this.forceRedraw();
+        }, 100);
     }
 
     setCanvasSize() {
         const navbarHeight = this.navbar.offsetHeight;
-        this.snowCanvas.style.height = `${navbarHeight}px`;
-        document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
-        
-        // Asegurar proporción correcta de los copos
         const navbarWidth = this.navbar.offsetWidth;
-        this.snowCanvas.width = navbarWidth * window.devicePixelRatio;
-        this.snowCanvas.height = navbarHeight * window.devicePixelRatio;
+        const pixelRatio = window.devicePixelRatio || 1;
+        
+        this.snowCanvas.width = navbarWidth * pixelRatio;
+        this.snowCanvas.height = navbarHeight * pixelRatio;
         this.snowCanvas.style.width = `${navbarWidth}px`;
+        this.snowCanvas.style.height = `${navbarHeight}px`;
+        
+        document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
+    }
+
+    forceRedraw() {
+        // Disparar un evento personalizado para que snow.js redibuje
+        const event = new CustomEvent('forceRedraw');
+        window.dispatchEvent(event);
     }
 
     setupEventListeners() {
@@ -45,7 +58,10 @@ class NavbarSnow {
         const navbarCollapse = document.querySelector('.navbar-collapse');
         if (navbarCollapse) {
             new MutationObserver((mutations) => {
-                mutations.forEach(() => this.setCanvasSize());
+                mutations.forEach(() => {
+                    this.setCanvasSize();
+                    this.forceRedraw();
+                });
             }).observe(navbarCollapse, {
                 attributes: true,
                 attributeFilter: ['class']
@@ -56,17 +72,24 @@ class NavbarSnow {
     handleResize() {
         if (this.initialized) {
             this.setCanvasSize();
+            this.forceRedraw();
         }
     }
 
     handleMenuToggle() {
         setTimeout(() => {
             this.setCanvasSize();
-        }, 50); // Pequeño retraso para permitir la animación de Bootstrap
+            this.forceRedraw();
+        }, 300); // Mayor retraso para animación de Bootstrap
     }
 }
 
-// Inicialización cuando el DOM esté listo
+// Inicialización mejorada
 document.addEventListener('DOMContentLoaded', () => {
-    new NavbarSnow();
+    // Esperar a que los recursos críticos estén listos
+    if (document.readyState === 'complete') {
+        new NavbarSnow();
+    } else {
+        window.addEventListener('load', () => new NavbarSnow());
+    }
 });
