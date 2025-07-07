@@ -12,8 +12,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container">
+    <nav class="navbar navbar-dark bg-primary position-relative overflow-hidden">
+        <canvas id="snow-canvas"
+            style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
+        <div class="container position-relative" style="z-index:3;">
             <a class="navbar-brand" href="index.html">
                 <img src="src/img/penguin.svg" alt="Pingüino"
                     style="height: 2rem; vertical-align: middle; margin-right: 0.5em;">
@@ -186,6 +188,7 @@
     </footer>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="src/js/snow.js"></script>
 </body>
 
 </html>
