@@ -1,4 +1,65 @@
 /* Estilos base */
+.navbar {
+    box-shadow: none !important;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
+    overflow: visible !important;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-container {
+    background-color: #1976d2;
+    width: 100%;
+    position: relative;
+    box-shadow: none !important;
+}
+
+.navbar-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+/* Eliminar sombras y fondos no deseados */
+.navbar-nav .nav-link {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+/* Eliminar el efecto de "active" por defecto */
+.navbar-nav .nav-link.active {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    font-weight: 500;
+}
+
+/* Asegurar que el navbar-collapse no tenga fondo blanco */
+.navbar-collapse {
+    background-color: transparent !important;
+}
+
+/* Corrección para el botón hamburguesa */
+.navbar-toggler {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0.5rem;
+}
+
 .navbar-brand {
     font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
     font-weight: 700;
@@ -9,6 +70,7 @@
     padding: 0.3em 1em;
     border-radius: 0.7em;
     transition: none;
+    margin-right: 1rem;
 }
 
 .navbar-brand:hover {
@@ -58,6 +120,20 @@
     display: inline-block;
 }
 
+/* Canvas de copos de nieve */
+#snow-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateZ(0);
+    background: transparent;
+}
+
+/* Botones */
 .custom-btn-fixed {
     background-color: #1976d2 !important;
     border-color: #1976d2 !important;
@@ -79,36 +155,50 @@
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
 }
 
-/* Ajustes para el menú hamburguesa y la nieve */
+/* Menú hamburguesa */
 .navbar-collapse {
     position: relative;
-    z-index: 4; /* Mayor que el z-index del canvas de nieve (2) */
+    z-index: 3;
+    background-color: #1976d2;
+    margin-top: 0;
 }
 
+.navbar-collapse.collapsing,
 .navbar-collapse.show {
-    background-color: #1976d2; /* Mismo color que tu navbar */
-    margin-top: 8px; /* Espacio entre navbar y menú desplegado */
     border-radius: 0 0 0.7rem 0.7rem;
     padding: 0.5rem 1rem;
 }
 
-/* Asegurar que el canvas de nieve no se expanda con el menú */
-.navbar {
-    position: relative;
-    overflow: visible; /* Cambiado de overflow-hidden */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    margin-left: auto;
 }
 
-#snow-canvas {
-    position: fixed; /* Cambiado de absolute */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--navbar-height, 56px); /* Altura del navbar */
-    pointer-events: none;
-    z-index: 2;
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
 }
 
-/* Sección Testimonios - Versión Mejorada */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5em;
+    height: 1.5em;
+}
+
+/* Eliminar bordes redondeados en móviles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        border-radius: 0 !important;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Sección Testimonios */
 .testimonios-shadow {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
     position: relative;
@@ -192,25 +282,7 @@
     margin-top: auto;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 10px));
-    }
-}
-
-/* Animación específica para móviles */
-@keyframes scroll-mobile {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-60% - 15px));
-    }
-}
-
+/* Servicios */
 .card.servicio-card {
     opacity: 0;
     transform: translateY(30px);
@@ -257,6 +329,7 @@
     margin-bottom: 2rem;
 }
 
+/* WhatsApp flotante */
 .whatsapp-float {
     position: fixed;
     bottom: 80px;
@@ -294,22 +367,23 @@
     }
 }
 
-/* MENÚ HAMBURGUESA */
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-    margin-left: auto;
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 10px));
+    }
 }
 
-.navbar-toggler:focus {
-    box-shadow: none;
-    outline: none;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    width: 1.5em;
-    height: 1.5em;
+/* Animación específica para móviles */
+@keyframes scroll-mobile {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-60% - 15px));
+    }
 }
 
 /* MEDIA QUERIES */
@@ -382,5 +456,17 @@
     
     .testimonios-track {
         animation: scroll-mobile 200s linear infinite;
+    }
+    
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+    
+    .brand-tecnosur {
+        font-size: 2rem;
+    }
+    
+    .brand-parana {
+        font-size: 1rem;
     }
 }
