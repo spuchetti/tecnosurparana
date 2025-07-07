@@ -104,7 +104,7 @@
     display: flex;
     gap: 20px;
     padding: 10px;
-    animation: scroll 90s linear infinite;
+    animation: scroll 120s linear infinite; /* Aumentado de 90s a 120s */
     width: max-content;
     will-change: transform;
 }
@@ -278,6 +278,7 @@
     .testimonios-track {
         padding: 10px 15px;
         gap: 20px;
+        animation-duration: 120s; /* Mantener consistencia en todos los dispositivos */
     }
 }
 
@@ -298,6 +299,10 @@
         100% {
             transform: translateX(calc(-50% - 7.5px));
         }
+    }
+    
+    .testimonios-track {
+        animation-duration: 120s; /* Mantener consistencia en todos los dispositivos */
     }
 }
 
@@ -322,6 +327,10 @@
         font-size: 1.5rem;
         padding: 0 1rem;
     }
+    
+    .testimonios-track {
+        animation-duration: 120s; /* Mantener consistencia en todos los dispositivos */
+    }
 }
 
 @media (max-width: 480px) {
@@ -336,5 +345,9 @@
     .testimonio-card img {
         width: 40px;
         height: 40px;
+    }
+    
+    .testimonios-track {
+        animation-duration: 120s; /* Mantener consistencia en todos los dispositivos */
     }
 }
