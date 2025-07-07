@@ -104,7 +104,7 @@
     display: flex;
     gap: 20px;
     padding: 10px;
-    animation: scroll 40s linear infinite;
+    animation: scroll 90s linear infinite;
     width: max-content;
     will-change: transform;
 }
