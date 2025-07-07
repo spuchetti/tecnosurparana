@@ -79,6 +79,35 @@
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
 }
 
+/* Ajustes para el menú hamburguesa y la nieve */
+.navbar-collapse {
+    position: relative;
+    z-index: 4; /* Mayor que el z-index del canvas de nieve (2) */
+}
+
+.navbar-collapse.show {
+    background-color: #1976d2; /* Mismo color que tu navbar */
+    margin-top: 8px; /* Espacio entre navbar y menú desplegado */
+    border-radius: 0 0 0.7rem 0.7rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Asegurar que el canvas de nieve no se expanda con el menú */
+.navbar {
+    position: relative;
+    overflow: visible; /* Cambiado de overflow-hidden */
+}
+
+#snow-canvas {
+    position: fixed; /* Cambiado de absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--navbar-height, 56px); /* Altura del navbar */
+    pointer-events: none;
+    z-index: 2;
+}
+
 /* Sección Testimonios - Versión Mejorada */
 .testimonios-shadow {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
