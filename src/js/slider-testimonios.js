@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Iniciar animación después de un breve retraso para asegurar que el DOM esté listo
     setTimeout(() => {
-        track.style.animation = 'scroll 40s linear infinite';
+        track.style.animation = 'scroll 60s linear infinite';
         track.style.willChange = 'transform';
     }, 50);
     
