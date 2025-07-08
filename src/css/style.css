@@ -1,9 +1,23 @@
+/* Estilos para la sección principal */
+.main-intro h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #1a365d; /* Un azul más oscuro para mejor contraste */
+}
+
+.main-intro p.lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #4a5568; /* Un gris azulado más suave */
+}
 
 /* Estilos para el banner */
 .banner-container {
     position: relative;
     width: 100%;
-    height: 50vh;         /* Altura proporcional a la pantalla */
+    height: 60vh;         /* Altura proporcional a la pantalla */
     min-height: 250px;
     max-height: 450px;
     overflow: hidden;
@@ -25,9 +39,9 @@
 
 
 .banner-container img {
-   width: 100%;
+    width: 100%;
     height: 100%;
-    object-position: center;;
+    object-position: center;
     object-fit: cover; /* Cubre todo el contenedor */
     position: absolute;
     top: 0;
@@ -337,6 +351,13 @@
 }
 
 @media (max-width: 768px) {
+    .main-intro h1 {
+        font-size: 2rem;
+    }
+    
+    .main-intro p.lead {
+        font-size: 1.1rem;
+    }
 
     .banner-container {
         height: 35vh;     /* Menor altura en móvil */
