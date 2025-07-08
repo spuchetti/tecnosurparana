@@ -104,7 +104,7 @@
     display: flex;
     gap: 20px;
     padding: 10px;
-    animation: scroll 60s linear infinite;
+    animation: scroll 120s linear infinite;
     width: max-content;
     will-change: transform;
 }
@@ -300,7 +300,7 @@
         }
     }
     .testimonios-track {
-        animation: scroll 60s linear infinite; /* Mismo cambio aquí */
+        animation: scroll 120s linear infinite; /* Mismo cambio aquí */
     }
 }
 
