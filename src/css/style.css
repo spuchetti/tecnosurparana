@@ -5,7 +5,6 @@
     overflow: hidden;
 }
 
-/*
 .banner-container::after {
     content: "";
     position: absolute;
@@ -13,13 +12,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.1);  Ajusta la opacidad (0.3 a 0.5) 
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad (0.3 a 0.5) */
     z-index: 1;
 }
-*/
+
 
 .banner-container img {
-    filter: blur(4px); /* Ajusta el valor (2px-5px) para más/menos difuminado */
+    /*filter: blur(1px); /* Ajusta el valor (2px-5px) para más/menos difuminado */
     width: 100%;
     height: auto;
     object-fit: cover;
