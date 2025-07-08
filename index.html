@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!-- Reemplaza tu nav actual por este código -->
     <nav class="navbar navbar-dark bg-primary navbar-expand-md position-relative overflow-hidden">
         <canvas id="snow-canvas"
             style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
@@ -82,10 +81,10 @@
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm border-0 servicio-card">
                     <div class="card-body text-center">
-                        <!-- Reparación de Aires y Heladeras -->
                         <i class="bi bi-snow servicio-icono mb-3"></i>
                         <h5 class="card-title">Reparación de Aires, Heladeras y Lavarropas</h5>
-                        <p class="card-text">Solucionamos fallas en equipos split, centrales, heladeras y lavarropas familiares o
+                        <p class="card-text">Solucionamos fallas en equipos split, centrales, heladeras y lavarropas
+                            familiares o
                             comerciales.</p>
                     </div>
                 </div>
@@ -93,7 +92,6 @@
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm border-0 servicio-card">
                     <div class="card-body text-center">
-                        <!-- Instalación de Equipos -->
                         <i class="bi bi-tools servicio-icono mb-3"></i>
                         <h5 class="card-title">Instalación de Equipos</h5>
                         <p class="card-text">Instalamos aires acondicionados y sistemas de refrigeración de todo tipo,
@@ -104,7 +102,6 @@
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm border-0 servicio-card">
                     <div class="card-body text-center">
-                        <!-- Mantenimiento y Asesoramiento -->
                         <i class="bi bi-shield-check servicio-icono mb-3"></i>
                         <h5 class="card-title">Mantenimiento y Asesoramiento</h5>
                         <p class="card-text">Ofrecemos mantenimiento preventivo y asesoramiento para prolongar la vida
@@ -114,13 +111,13 @@
             </div>
         </div>
     </section>
+
     <!-- Testimonios -->
-    <!-- Sección Testimonios (Slider automático) -->
     <section class="container-fluid py-5 testimonios-shadow" style="background-color: #f8f9fa; overflow: hidden;">
         <h2 class="text-center mb-4 text-dark">Testimonios de nuestros clientes</h2>
         <div class="container-fluid px-0">
             <div class="testimonios-track" id="testimonios-track">
-                <!-- Las cards se generarán dinámicamente aquí -->
+                <!-- Las cards se generan dinámicamente acá -->
             </div>
         </div>
     </section>
@@ -138,7 +135,7 @@
         </div>
     </div>
 
-    <!-- Sección FAQ -->
+    <!-- FAQ -->
     <section class="container my-5">
         <h2 class="text-center mb-4 text-dark">Preguntas Frecuentes</h2>
         <div class="accordion" id="faqAccordion">
@@ -174,10 +171,29 @@
                 <h2 class="accordion-header" id="faq3">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                        ¿Qué formas de pago aceptan?
+                        ¿Ofrecen garantía por sus servicios? ¿De cuánto tiempo?
                     </button>
                 </h2>
                 <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Sí, todos nuestros trabajos cuentan con 1 año de garantía. La garantía cubre
+                        defectos de mano de obra y materiales proporcionados por nosotros.
+
+                        <!--  Para reparaciones ofrecemos 3 meses de
+                        garantía, mientras que para instalaciones nuevas la garantía es de 6 meses. La garantía cubre
+                        defectos de mano de obra y materiales proporcionados por nosotros.-->
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faq4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        ¿Qué formas de pago aceptan?
+                    </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         Efectivo o transferencia.
