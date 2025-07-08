@@ -1,4 +1,37 @@
-/* Estilos base */
+
+/* Estilos para el banner */
+.banner-container {
+    position: relative;
+    overflow: hidden;
+}
+.banner-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1); /* Ajusta la opacidad (0.3 a 0.5) */
+    z-index: 1;
+}
+.banner-container img {
+    filter: blur(4px); /* Ajusta el valor (2px-5px) para más/menos difuminado */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Asegura que el texto esté sobre la imagen */
+}
+
 .navbar-brand {
     font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
     font-weight: 700;
