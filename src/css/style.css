@@ -12,6 +12,15 @@
     margin-bottom: 2rem;
     color: #4a5568; /* Un gris azulado más suave */
 }
+.main-img {
+    border: 3px solid rgba(25, 118, 210, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.main-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
 
 /* Estilos para el banner */
 .banner-container {
