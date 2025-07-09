@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tecnosurparana.vercel.app/sitemap.xml
