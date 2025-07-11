@@ -520,25 +520,57 @@
 
 @media (max-width: 424px) {
   .navbar-brand {
-    font-size: 1.5rem; /* Reduce tamaño del texto */
-    padding: 0.3em 0.5em; /* Reduce padding */
+    max-width: calc(100% - 60px); /* Reserva espacio para el botón */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.4rem;
+    padding: 0.25em 0;
   }
-  
+
   .brand-tecnosur {
-    font-size: 1.7rem; /* Ajusta tamaño de "TecnoSur" */
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
   }
-  
+
   .brand-parana {
-    font-size: 0.9rem; /* Ajusta tamaño de "Paraná" */
+    font-size: 0.8rem;
+    vertical-align: baseline;
+    margin-left: 0;
+    display: inline-block;
   }
-  
+
   .navbar-brand img {
-    height: 1.5rem; /* Reduce tamaño del pingüino */
-    margin-right: 0.3em;
+    height: 1.4rem;
+    margin-right: 0.25em;
   }
-  
+
   .navbar-toggler {
-    padding: 0.25rem; /* Reduce padding del botón */
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.2rem;
+  }
+}
+
+/* Ajuste específico para pantallas extremadamente pequeñas */
+@media (max-width: 397px) {
+  .navbar-brand {
+    max-width: calc(100% - 55px); /* Ajuste más fino */
+    font-size: 1.3rem;
+  }
+
+  .brand-tecnosur {
+    font-size: 1.4rem;
+  }
+
+  .brand-parana {
+    font-size: 0.75rem;
+  }
+
+  .navbar-brand img {
+    height: 1.3rem;
   }
 }
 
