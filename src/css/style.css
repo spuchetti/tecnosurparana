@@ -94,36 +94,20 @@
     text-decoration: none;
 }
 
-.brand-tecnosur,
-.brand-parana {
-    transition: transform 0.2s;
-    display: inline-block;
-}
-
-.navbar-brand:hover .brand-tecnosur,
-.navbar-brand:hover .brand-parana {
-    transform: scale(1.05);
-}
-
-.brand-nombre {
-    display: inline-block;
-    transition: transform 0.2s;
-}
-
-.navbar-brand:hover .brand-nombre {
-    transform: scale(1.05);
-}
-
-.brand-tecnosur,
-.brand-parana {
-    transition: none;
-}
-
-.brand-tecnosur {
+.brand-tecno{
     font-size: 2.3rem;
     font-weight: 800;
     letter-spacing: 2px;
     display: inline-block;
+    color: #232673;
+}
+
+.brand-sur{
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: inline-block;
+    color: #FF6A00;
 }
 
 .brand-parana {
@@ -134,7 +118,27 @@
     vertical-align: super;
     letter-spacing: 1px;
     display: inline-block;
+    color: #fff;
 }
+
+/* Elimina las transiciones individuales y aplica solo al contenedor */
+.brand-nombre {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+/* Efecto hover aplicado al contenedor principal */
+.navbar-brand:hover .brand-nombre {
+    transform: scale(1.05);
+}
+
+/* Elimina los hovers individuales que había antes */
+.navbar-brand:hover .brand-tecno,
+.navbar-brand:hover .brand-sur,
+.navbar-brand:hover .brand-parana {
+    transform: none; /* Esto elimina los efectos individuales */
+}
+
 
 .custom-btn-fixed {
     background-color: #1976d2 !important;
