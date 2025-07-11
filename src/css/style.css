@@ -455,4 +455,81 @@
         width: 40px;
         height: 40px;
     }
+
+    /* Ajustes para el logo */
+    .navbar-brand img {
+        height: 1.8rem; /* Reduce un poco el pingüino */
+        margin-right: 0.3em;
+    }
+    
+    .brand-tecno, 
+    .brand-sur {
+        font-size: 2rem; /* Reduce tamaño de texto */
+        letter-spacing: 1px;
+    }
+    
+    .brand-parana {
+        font-size: 1rem;
+    }
+    
+    /* Mejora el banner */
+    .banner-text h1 {
+        font-size: 1.4rem; /* Un poco más pequeño */
+        line-height: 1.3;
+    }
+    
+    .banner-text p {
+        font-size: 0.9rem;
+    }
+    
+    .banner-container::after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)); /* Gradiente más oscuro */
+    }
+    
+    /* Ajuste para los botones principales */
+    .main-intro .d-flex {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .main-intro .btn {
+        width: 100%;
+    }
+    
+    /* Testimonios más ajustados */
+    .testimonio-card {
+        flex: 0 0 90vw; /* Ocupa casi todo el ancho */
+        margin: 0 5vw;
+    }
+    
+    /* Mapa un poco más compacto */
+    .ratio-21x9 {
+        --bs-aspect-ratio: 30%; /* Cambia la proporción */
+    }
+    
+    /* Ajuste para FAQ */
+    .accordion-button {
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .accordion-body {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajuste extra para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+    
+    .brand-tecno,
+    .brand-sur {
+        font-size: 1.8rem;
+    }
+    
+    .banner-text h1 {
+        font-size: 1.3rem;
+    }
 }
