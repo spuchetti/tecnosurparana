@@ -33,6 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    aspect-ratio: 16/9;
 }
 
 .banner-container::after {
