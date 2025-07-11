@@ -518,6 +518,30 @@
     }
 }
 
+@media (max-width: 424px) {
+  .navbar-brand {
+    font-size: 1.5rem; /* Reduce tamaño del texto */
+    padding: 0.3em 0.5em; /* Reduce padding */
+  }
+  
+  .brand-tecnosur {
+    font-size: 1.7rem; /* Ajusta tamaño de "TecnoSur" */
+  }
+  
+  .brand-parana {
+    font-size: 0.9rem; /* Ajusta tamaño de "Paraná" */
+  }
+  
+  .navbar-brand img {
+    height: 1.5rem; /* Reduce tamaño del pingüino */
+    margin-right: 0.3em;
+  }
+  
+  .navbar-toggler {
+    padding: 0.25rem; /* Reduce padding del botón */
+  }
+}
+
 /* Ajuste extra para pantallas muy pequeñas */
 @media (max-width: 360px) {
     .navbar-brand {
