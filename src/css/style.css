@@ -1,4 +1,6 @@
-/* Fuentes y estilos base */
+/* ============================================= */
+/* 1. VARIABLES Y FUENTES */
+/* ============================================= */
 @font-face {
     font-family: 'bootstrap-icons';
     src: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030') format('woff2');
@@ -7,15 +9,18 @@
     font-style: normal;
 }
 
+/* ============================================= */
+/* 2. ESTILOS BASE */
+/* ============================================= */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Animaciones */
+/* ============================================= */
+/* 3. ANIMACIONES */
+/* ============================================= */
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+    to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
@@ -26,16 +31,13 @@ body {
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-50% - 10px));
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 10px)); }
 }
 
-/* Componentes reutilizables */
+/* ============================================= */
+/* 4. COMPONENTES REUTILIZABLES */
+/* ============================================= */
 .card {
     transition: transform 0.18s, box-shadow 0.18s;
 }
@@ -44,7 +46,10 @@ body {
     transition: transform 0.15s, box-shadow 0.15s;
 }
 
-/* Estructura principal */
+/* ============================================= */
+/* 5. ESTRUCTURA PRINCIPAL */
+/* ============================================= */
+/* 5.1 Navbar */
 .navbar-brand {
     font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
     font-weight: 700;
@@ -86,7 +91,7 @@ body {
     color: #fff;
 }
 
-/* Banner */
+/* 5.2 Banner */
 .banner-container {
     position: relative;
     width: 100%;
@@ -141,7 +146,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* Contenido principal */
+/* 5.3 Contenido principal */
 .main-intro h1 {
     font-size: 2.5rem;
     line-height: 1.2;
@@ -166,7 +171,10 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Servicios */
+/* ============================================= */
+/* 6. SECCIONES ESPECÍFICAS */
+/* ============================================= */
+/* 6.1 Servicios */
 .servicios-titulo {
     display: inline-block;
     border-bottom: 3px solid #1976d2;
@@ -194,17 +202,9 @@ body {
     animation: fadeInUp 0.7s forwards;
 }
 
-.card.servicio-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.card.servicio-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.card.servicio-card:nth-child(3) {
-    animation-delay: 0.3s;
-}
+.card.servicio-card:nth-child(1) { animation-delay: 0.1s; }
+.card.servicio-card:nth-child(2) { animation-delay: 0.2s; }
+.card.servicio-card:nth-child(3) { animation-delay: 0.3s; }
 
 .card.servicio-card:hover,
 .card.servicio-card:focus-within {
@@ -212,7 +212,7 @@ body {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
 }
 
-/* Testimonios - Versión Responsive */
+/* 6.2 Testimonios */
 .testimonios-shadow {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
     position: relative;
@@ -289,7 +289,10 @@ body {
     color: #333;
 }
 
-/* Botones */
+/* ============================================= */
+/* 7. COMPONENTES ESPECIALES */
+/* ============================================= */
+/* 7.1 Botones */
 .custom-btn-fixed {
     background-color: #1976d2 !important;
     border-color: #1976d2 !important;
@@ -307,7 +310,7 @@ body {
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
 }
 
-/* WhatsApp flotante */
+/* 7.2 WhatsApp flotante */
 .whatsapp-float {
     position: fixed;
     bottom: 80px;
@@ -331,7 +334,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Menú hamburguesa */
+/* 7.3 Menú hamburguesa */
 .navbar-toggler {
     border: none;
     padding: 0.5rem;
@@ -346,7 +349,10 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Media Queries */
+/* ============================================= */
+/* 8. MEDIA QUERIES */
+/* ============================================= */
+/* 8.1 Dispositivos grandes (lg) */
 @media (max-width: 992px) {
     .testimonios-track {
         padding: 10px 15px;
@@ -354,52 +360,7 @@ body {
     }
 }
 
-@media (min-width: 576px) {
-    .testimonio-card {
-        flex: 0 0 280px;
-        margin: 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .testimonios-shadow {
-        padding: 2.5rem 0;
-    }
-
-    .testimonio-card {
-        flex: 0 0 300px;
-        min-height: 220px;
-        padding: 1.5rem;
-    }
-
-    .testimonio-card img {
-        width: 44px;
-        height: 44px;
-    }
-}
-
-@media (min-width: 992px) {
-    .testimonios-track {
-        gap: 25px;
-        padding: 15px;
-    }
-
-    .testimonio-card {
-        flex: 0 0 320px;
-    }
-
-    .testimonio-card img {
-        width: 48px;
-        height: 48px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .testimonio-card {
-        flex: 0 0 350px;
-    }
-}
-
+/* 8.2 Dispositivos medianos (md) */
 @media (max-width: 768px) {
     .main-intro h1 {
         font-size: 2rem;
@@ -429,6 +390,7 @@ body {
     }
 }
 
+/* 8.3 Dispositivos pequeños (sm) */
 @media (max-width: 576px) {
     .whatsapp-float {
         bottom: 60px;
@@ -441,8 +403,45 @@ body {
     .testimonios-shadow h2 {
         font-size: 1.5rem;
     }
+
+    /* Testimonios para móviles */
+    .testimonios-track {
+        gap: 10px;
+        padding: 10px 5px;
+        animation: scroll 180s linear infinite;
+    }
+    
+    .testimonio-card {
+        flex: 0 0 calc(33.333% - 10px);
+        min-height: 180px;
+        padding: 1rem;
+        margin: 0 5px;
+    }
+    
+    .testimonio-card img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .testimonio-card .stars {
+        font-size: 0.9rem;
+    }
+    
+    .testimonio-card .card-text {
+        font-size: 0.85rem;
+    }
+    
+    .testimonio-card .user-name {
+        font-size: 0.8rem;
+    }
+    
+    .testimonio-card .bi-quote {
+        font-size: 1.5rem;
+        margin-right: 0.3rem;
+    }
 }
 
+/* 8.4 Dispositivos extra pequeños (xs) */
 @media (max-width: 480px) {
     .banner-container {
         height: 30vh;
@@ -554,11 +553,49 @@ body {
     }
 }
 
-/* Ajustes para pantallas muy pequeñas (testimonios) */
-@media (max-width: 400px) {
-  .testimonio-card::before {
-    font-size: 2rem;
-    left: 10px;
-    top: 10px;
-  }
+/* 8.5 Media queries para tamaños específicos (min-width) */
+@media (min-width: 576px) {
+    .testimonio-card {
+        flex: 0 0 280px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .testimonios-shadow {
+        padding: 2.5rem 0;
+    }
+
+    .testimonio-card {
+        flex: 0 0 300px;
+        min-height: 220px;
+        padding: 1.5rem;
+    }
+
+    .testimonio-card img {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonios-track {
+        gap: 25px;
+        padding: 15px;
+    }
+
+    .testimonio-card {
+        flex: 0 0 320px;
+    }
+
+    .testimonio-card img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .testimonio-card {
+        flex: 0 0 350px;
+    }
 }
