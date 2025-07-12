@@ -1,37 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('testimonios-track');
     
-    // Array de testimonios
+    // Array de testimonios con avatares de 48x48
     const testimonios = [
         {
             nombre: "Carlos G.",
             texto: "Excelente servicio, llegaron rápido y solucionaron el problema de mi aire acondicionado en menos de una hora. Muy profesionales!",
             estrellas: 5,
-            avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+            avatar: "https://randomuser.me/api/portraits/thumb/men/32.jpg"
         },
         {
             nombre: "María L.",
             texto: "Repararon mi heladera el mismo día que llamé. El técnico fue muy amable y explicó todo claramente. Recomendable!",
             estrellas: 4,
-            avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+            avatar: "https://randomuser.me/api/portraits/thumb/women/44.jpg"
         },
         {
             nombre: "Juan P.",
             texto: "El mejor servicio técnico de Paraná. Hace años que confío en ellos para el mantenimiento de todos mis equipos.",
             estrellas: 5,
-            avatar: "https://randomuser.me/api/portraits/men/75.jpg"
+            avatar: "https://randomuser.me/api/portraits/thumb/men/75.jpg"
         },
         {
             nombre: "Ana S.",
             texto: "Instalaron mi aire acondicionado nuevo con mucha prolijidad y cuidado. Precio justo y buena atención.",
             estrellas: 5,
-            avatar: "https://randomuser.me/api/portraits/women/63.jpg"
+            avatar: "https://randomuser.me/api/portraits/thumb/women/63.jpg"
         },
         {
             nombre: "Roberto M.",
             texto: "Urgencia atendida a las 2 de la mañana. Salvó todos los alimentos de mi negocio. Gracias TecnoSur!",
             estrellas: 5,
-            avatar: "https://randomuser.me/api/portraits/men/81.jpg"
+            avatar: "https://randomuser.me/api/portraits/thumb/men/81.jpg"
         }
     ];
     
@@ -60,15 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${testimonio.texto}
                 </p>
                 <div class="d-flex align-items-center mt-auto pt-1">
-                    <img src="${testimonio.avatar}" alt="${testimonio.nombre}" 
-                         class="rounded-circle me-2" style="width:48px; height:48px; object-fit:cover;">
+                    <img src="${testimonio.avatar}" 
+                         alt="${testimonio.nombre}" 
+                         width="48" 
+                         height="48"
+                         class="rounded-circle me-2" 
+                         style="width:48px; height:48px; object-fit:cover;">
                     <span class="fw-bold">${testimonio.nombre}</span>
                 </div>
             </div>
         `;
         track.appendChild(card);
     });
-    
+
+    // Resto del código permanece igual...
     // Calcular el ancho total necesario basado en el tamaño de pantalla
     const calculateTrackWidth = () => {
         const isMobile = window.innerWidth < 576;
