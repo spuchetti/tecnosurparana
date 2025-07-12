@@ -212,28 +212,33 @@ body {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
 }
 
-/* 6.2 Testimonios */
+/* 6.2 Testimonios - Versión mejorada */
 .testimonios-shadow {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
     position: relative;
     overflow-x: hidden;
-    padding: 2rem 0;
+    padding: 2rem 15px;
     background-color: #f8f9fa;
+}
+
+.testimonios-container {
+    width: 100%;
+    overflow: hidden;
 }
 
 .testimonios-track {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     padding: 10px;
-    animation: scroll 120s linear infinite;
+    animation: scroll 90s linear infinite;
     width: max-content;
     will-change: transform;
 }
 
 .testimonio-card {
-    flex: 0 0 calc(100% - 40px);
+    flex: 0 0 300px;
     height: auto;
-    min-height: 200px;
+    min-height: 220px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -241,7 +246,6 @@ body {
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
-    margin: 0 10px;
     position: relative;
 }
 
@@ -276,8 +280,8 @@ body {
 }
 
 .testimonio-card img {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     object-fit: cover;
     border-radius: 50%;
     margin-right: 0.75rem;
@@ -355,8 +359,8 @@ body {
 /* 8.1 Dispositivos grandes (lg) */
 @media (max-width: 992px) {
     .testimonios-track {
+        gap: 15px;
         padding: 10px 15px;
-        gap: 20px;
     }
 }
 
@@ -388,6 +392,12 @@ body {
         height: 50px;
         font-size: 1.8rem;
     }
+
+    /* Ajustes para testimonios en tablets */
+    .testimonio-card {
+        flex: 0 0 280px;
+        min-height: 200px;
+    }
 }
 
 /* 8.3 Dispositivos pequeños (sm) */
@@ -397,7 +407,7 @@ body {
     }
 
     .testimonios-shadow {
-        padding: 1.5rem 0;
+        padding: 1.5rem 10px;
     }
 
     .testimonios-shadow h2 {
@@ -406,38 +416,16 @@ body {
 
     /* Testimonios para móviles */
     .testimonios-track {
-        gap: 10px;
-        padding: 10px 5px;
-        animation: scroll 180s linear infinite;
+        animation: scroll 60s linear infinite;
+        padding-left: 10px;
+        padding-right: 40%;
     }
-    
+
     .testimonio-card {
-        flex: 0 0 calc(33.333% - 10px);
+        flex: 0 0 75vw;
+        min-width: 75vw;
         min-height: 180px;
         padding: 1rem;
-        margin: 0 5px;
-    }
-    
-    .testimonio-card img {
-        width: 32px;
-        height: 32px;
-    }
-    
-    .testimonio-card .stars {
-        font-size: 0.9rem;
-    }
-    
-    .testimonio-card .card-text {
-        font-size: 0.85rem;
-    }
-    
-    .testimonio-card .user-name {
-        font-size: 0.8rem;
-    }
-    
-    .testimonio-card .bi-quote {
-        font-size: 1.5rem;
-        margin-right: 0.3rem;
     }
 }
 
@@ -488,6 +476,34 @@ body {
 
     .accordion-body {
         font-size: 0.9rem;
+    }
+
+    /* Ajuste final para testimonios en móviles pequeños */
+    .testimonio-card {
+        flex: 0 0 80vw;
+        min-width: 80vw;
+    }
+    
+    .testimonio-card img {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .testimonio-card .stars {
+        font-size: 0.9rem;
+    }
+    
+    .testimonio-card .card-text {
+        font-size: 0.85rem;
+    }
+    
+    .testimonio-card .user-name {
+        font-size: 0.8rem;
+    }
+    
+    .testimonio-card .bi-quote {
+        font-size: 1.5rem;
+        margin-right: 0.3rem;
     }
 }
 
@@ -551,13 +567,18 @@ body {
     .banner-text h1 {
         font-size: 1.3rem;
     }
+
+    /* Ajuste extra para móviles muy pequeños */
+    .testimonio-card {
+        flex: 0 0 85vw;
+        min-width: 85vw;
+    }
 }
 
 /* 8.5 Media queries para tamaños específicos (min-width) */
 @media (min-width: 576px) {
     .testimonio-card {
         flex: 0 0 280px;
-        margin: 0;
     }
 }
 
