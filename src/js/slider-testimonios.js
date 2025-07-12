@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${testimonio.texto}
                 </p>
                 <div class="d-flex align-items-center mt-auto pt-1">
-                    <img src="${testimonio.avatar}" 
+                    <img data-src="${testimonio.avatar}" 
                          alt="${testimonio.nombre}" 
                          width="48" 
                          height="48"
-                         class="rounded-circle me-2" 
+                         class="rounded-circle me-2 lazy" 
                          style="width:48px; height:48px; object-fit:cover;">
                     <span class="fw-bold">${testimonio.nombre}</span>
                 </div>
@@ -73,7 +73,26 @@ document.addEventListener('DOMContentLoaded', () => {
         track.appendChild(card);
     });
 
-    // Resto del código permanece igual...
+    // Cargar imágenes cuando sean visibles
+    const lazyLoadImages = () => {
+        const lazyImages = document.querySelectorAll('img.lazy');
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
+    };
+
     // Calcular el ancho total necesario basado en el tamaño de pantalla
     const calculateTrackWidth = () => {
         const isMobile = window.innerWidth < 576;
@@ -92,6 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const isMobile = window.innerWidth < 576;
         track.style.animation = `scroll ${isMobile ? '60s' : '90s'} linear infinite`;
         track.style.willChange = 'transform';
+        
+        // Cargar imágenes visibles inicialmente
+        lazyLoadImages();
     }, 50);
     
     // Recalcular en redimensionamiento de pantalla
@@ -112,4 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
     track.addEventListener('touchend', () => {
         track.style.animationPlayState = 'running';
     });
+
+    // Cargar imágenes cuando se hace scroll
+    window.addEventListener('scroll', lazyLoadImages);
+    window.addEventListener('resize', lazyLoadImages);
 });
