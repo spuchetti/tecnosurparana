@@ -15,7 +15,7 @@
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#0d6efd" />
     <meta name="mobile-web-app-capable" content="yes" />
-    
+
     <!-- Preconexiones y prefetch -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://maps.googleapis.com">
@@ -23,11 +23,14 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
     <!-- Preload de recursos críticos -->
-    <link rel="preload" href="src/img/hogar.webp" as="image" 
+    <link rel="preload" href="src/img/hogar.webp" as="image"
         imagesrcset="src/img/hogar-400.webp 400w, src/img/hogar-800.webp 800w"
         imagesizes="(max-width: 600px) 400px, 800px">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        as="style">
+    <link rel="preload"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030" as="font"
+        type="font/woff2" crossorigin>
     <link rel="preload" href="src/css/style.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
 
@@ -49,15 +52,16 @@
             display: flex;
             min-height: 56px;
         }
-        
+
         .banner-container {
             position: relative;
             width: 100%;
             aspect-ratio: 16/9;
             overflow: hidden;
-            background-color: #f0f0f0; /* Color de fondo mientras carga */
+            background-color: #f0f0f0;
+            /* Color de fondo mientras carga */
         }
-        
+
         .banner-text {
             position: absolute;
             top: 50%;
@@ -70,12 +74,13 @@
             width: 100%;
             padding: 0 1rem;
         }
-        
+
         /* Espacio reservado para la imagen LCP */
         .banner-container::before {
             content: "";
             display: block;
-            padding-top: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 56.25%;
+            /* 16:9 aspect ratio */
         }
 
         /* Estilos mínimos para el contenido principal */
@@ -98,14 +103,22 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        .bi-star-fill::before { content: "\f586"; }
-        .bi-quote::before { content: "\f33e"; }
+
+        .bi-star-fill::before {
+            content: "\f586";
+        }
+
+        .bi-quote::before {
+            content: "\f33e";
+        }
     </style>
 
     <!-- CSS con carga no bloqueante -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"
+        media="print" onload="this.media='all'">
     <link href="src/css/style.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'">
 
     <!-- Fallback para navegadores sin JS -->
     <noscript>
@@ -224,8 +237,10 @@
                 </div>
             </div>
             <div class="col-md-6 text-center">
-                <img src="src/img/tecnico_refrigeracion.webp" alt="Técnico reparando aire acondicionado en Paraná"
-                    class="img-fluid rounded shadow-lg" loading="lazy" width="600" height="400">
+                <div class="main-img-container">
+                    <img src="src/img/tecnico_refrigeracion.webp" alt="Técnico reparando aire acondicionado en Paraná"
+                        class="rounded shadow-lg" loading="lazy" width="600" height="400">
+                </div>
             </div>
         </div>
     </main>
