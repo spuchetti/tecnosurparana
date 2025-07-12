@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'bootstrap-icons';
+  src: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030') format('woff2');
+  font-display: swap; /* Esto permite mostrar texto con fuente de respaldo primero */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Estilos para la sección principal */
 .main-intro h1 {
     font-size: 2.5rem;
