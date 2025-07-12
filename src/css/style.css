@@ -370,6 +370,11 @@ body {
         font-size: 1.1rem;
     }
 
+    .main-img {
+        max-width: 100%;
+        height: auto;
+    }
+
     .banner-container {
         height: 35vh;
     }
@@ -397,6 +402,10 @@ body {
 
 /* 8.3 Dispositivos pequeños (sm) */
 @media (max-width: 576px) {
+    .main-img {
+        max-width: 90%;
+    }
+
     .whatsapp-float {
         bottom: 60px;
     }
@@ -450,6 +459,10 @@ body {
         font-size: 1rem;
     }
 
+    .main-img {
+        max-width: 85%;
+    }
+    
     .main-intro .d-flex {
         flex-direction: column;
         gap: 12px;
