@@ -106,10 +106,14 @@
 
 .brand-tecno::first-letter {
     color: #232673; /* T azul */
+    display: inline-block; /* Necesario para que line-height funcione */
+    line-height: 1.38; /* Valor óptimo para la mayoría de casos */
+    vertical-align: text-top; /* Opcional: alinea con el tope del texto */
 }
 
 .brand-sur::first-letter {
     color: #FF6A00; /* S naranja */
+    display: inline-block; /* Consistencia */
 }
 
 .brand-tecno,
@@ -128,6 +132,7 @@
     vertical-align: super;
     color: #fff;
     display: inline-block;
+    margin-left: 0.15em;
 }
 
 /* Botones */
