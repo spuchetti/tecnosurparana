@@ -1,109 +1,38 @@
-/* ============================================= */
-/* 1. VARIABLES Y FUENTES */
-/* ============================================= */
-@font-face {
-    font-family: 'bootstrap-icons';
-    src: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030') format('woff2');
-    font-display: optional;
-    font-weight: normal;
-    font-style: normal;
+/* Estilos para la sección principal */
+.main-intro h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #1a365d; /* Un azul más oscuro para mejor contraste */
 }
 
-/* ============================================= */
-/* 2. ESTILOS BASE */
-/* ============================================= */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+.main-intro p.lead {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #4a5568; /* Un gris azulado más suave */
+}
+.main-img {
+    border: 3px solid rgba(25, 118, 210, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ============================================= */
-/* 3. ANIMACIONES */
-/* ============================================= */
-@keyframes fadeIn {
-    to { opacity: 1; }
+.main-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 10px)); }
-}
-
-/* ============================================= */
-/* 4. COMPONENTES REUTILIZABLES */
-/* ============================================= */
-.card {
-    transition: transform 0.18s, box-shadow 0.18s;
-}
-
-.btn {
-    transition: transform 0.15s, box-shadow 0.15s;
-}
-
-/* ============================================= */
-/* 5. ESTRUCTURA PRINCIPAL */
-/* ============================================= */
-/* 5.1 Navbar */
-.navbar-brand {
-    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    color: #fff !important;
-    padding: 0.3em 1em;
-    border-radius: 0.7em;
-}
-
-.brand-nombre {
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
-
-.navbar-brand:hover .brand-nombre {
-    transform: scale(1.05);
-}
-
-.brand-tecno {
-    font-size: 2.3rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: #232673;
-}
-
-.brand-sur {
-    font-size: 2.3rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: #FF6A00;
-}
-
-.brand-parana {
-    font-size: 1.1rem;
-    font-weight: 700;
-    opacity: 0.85;
-    vertical-align: super;
-    color: #fff;
-}
-
-/* 5.2 Banner */
+/* Estilos para el banner */
 .banner-container {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 60vh;         /* Altura proporcional a la pantalla */
     min-height: 250px;
     max-height: 450px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 16/9;
-    background-color: #f0f0f0;
 }
 
 .banner-container::after {
@@ -113,14 +42,16 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
     z-index: 1;
 }
+
 
 .banner-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-position: center;
+    object-fit: cover; /* Cubre todo el contenedor */
     position: absolute;
     top: 0;
     left: 0;
@@ -146,48 +77,202 @@ body {
 .banner-text p {
     font-size: 1.2rem;
 }
-
-/* 5.3 Contenido principal */
-.main-intro h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: #1a365d;
+.navbar-brand {
+    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #fff !important;
+    background: none;
+    padding: 0.3em 1em;
+    border-radius: 0.7em;
+    transition: none;
 }
 
-.main-intro p.lead {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #4a5568;
+.navbar-brand:hover {
+    transform: none;
+    text-decoration: none;
 }
 
-.main-img {
-    border: 3px solid rgba(25, 118, 210, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.main-img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* ============================================= */
-/* 6. SECCIONES ESPECÍFICAS */
-/* ============================================= */
-
-
-.main-img-container img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* 6.1 Servicios */
-.servicios-titulo {
+.brand-tecnosur,
+.brand-parana {
+    transition: transform 0.2s;
     display: inline-block;
-    border-bottom: 3px solid #1976d2;
-    padding-bottom: 0.3rem;
-    margin-bottom: 2rem;
+}
+
+.navbar-brand:hover .brand-tecnosur,
+.navbar-brand:hover .brand-parana {
+    transform: scale(1.05);
+}
+
+.brand-nombre {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.navbar-brand:hover .brand-nombre {
+    transform: scale(1.05);
+}
+
+.brand-tecnosur,
+.brand-parana {
+    transition: none;
+}
+
+.brand-tecnosur {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+
+.brand-parana {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-left: 0.15em;
+    opacity: 0.85;
+    vertical-align: super;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.custom-btn-fixed {
+    background-color: #1976d2 !important;
+    border-color: #1976d2 !important;
+    color: #fff !important;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.custom-btn-fixed:hover,
+.custom-btn-fixed:focus {
+    background-color: #1976d2 !important;
+    border-color: #1976d2 !important;
+    color: #fff !important;
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
+}
+
+.custom-btn-fixed:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
+}
+
+/* Sección Testimonios - Versión Mejorada */
+.testimonios-shadow {
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
+    position: relative;
+    overflow-x: hidden;
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+}
+
+.testimonios-shadow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    background: linear-gradient(to bottom, rgba(248, 249, 250, 0) 0%, #f8f9fa 100%);
+    pointer-events: none;
+}
+
+.testimonios-track {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    animation: scroll 120s linear infinite;
+    width: max-content;
+    will-change: transform;
+}
+
+.testimonio-card {
+    flex: 0 0 350px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.testimonio-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.testimonio-card .card-text {
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.testimonio-card .text-warning {
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.2);
+}
+
+.testimonio-card img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.testimonio-card .d-flex {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 10px));
+    }
+}
+
+.card.servicio-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.7s forwards;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.card.servicio-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card.servicio-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card.servicio-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card.servicio-card:hover,
+.card.servicio-card:focus-within {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
 }
 
 .servicio-icono {
@@ -204,120 +289,13 @@ body {
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
 }
 
-.card.servicio-card {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.7s forwards;
+.servicios-titulo {
+    display: inline-block;
+    border-bottom: 3px solid #1976d2;
+    padding-bottom: 0.3rem;
+    margin-bottom: 2rem;
 }
 
-.card.servicio-card:nth-child(1) { animation-delay: 0.1s; }
-.card.servicio-card:nth-child(2) { animation-delay: 0.2s; }
-.card.servicio-card:nth-child(3) { animation-delay: 0.3s; }
-
-.card.servicio-card:hover,
-.card.servicio-card:focus-within {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
-}
-
-/* 6.2 Testimonios */
-.testimonios-shadow {
-    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
-    position: relative;
-    overflow-x: hidden;
-    padding: 2rem 15px;
-    background-color: #f8f9fa;
-}
-
-.testimonios-track {
-    display: flex;
-    gap: 15px;
-    padding: 10px;
-    animation: scroll 90s linear infinite;
-    width: max-content;
-    will-change: transform;
-}
-
-.testimonio-card {
-    flex: 0 0 300px;
-    height: auto;
-    min-height: 220px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.testimonio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.2);
-}
-
-.testimonio-card .card-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.testimonio-card .stars {
-    color: #FFC107;
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
-}
-
-.testimonio-card .card-text {
-    flex-grow: 1;
-    margin-bottom: 1rem;
-    color: #333;
-    line-height: 1.5;
-}
-
-.testimonio-card .user-info {
-    display: flex;
-    align-items: center;
-    margin-top: auto;
-}
-
-.testimonio-card img {
-    width: 44px;
-    height: 44px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 0.75rem;
-}
-
-.testimonio-card .user-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: #333;
-}
-
-/* ============================================= */
-/* 7. COMPONENTES ESPECIALES */
-/* ============================================= */
-/* 7.1 Botones */
-.custom-btn-fixed {
-    background-color: #1976d2 !important;
-    border-color: #1976d2 !important;
-    color: #fff !important;
-}
-
-.custom-btn-fixed:hover,
-.custom-btn-fixed:focus {
-    transform: scale(1.04);
-    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
-}
-
-.custom-btn-fixed:active {
-    transform: scale(0.98);
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
-}
-
-/* 7.2 WhatsApp flotante */
 .whatsapp-float {
     position: fixed;
     bottom: 80px;
@@ -341,10 +319,25 @@ body {
     transform: scale(1.1);
 }
 
-/* 7.3 Menú hamburguesa */
+/* Animaciones */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MENÚ HAMBURGUESA */
 .navbar-toggler {
     border: none;
     padding: 0.5rem;
+    margin-left: auto;
 }
 
 .navbar-toggler:focus {
@@ -354,36 +347,29 @@ body {
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5em;
+    height: 1.5em;
 }
 
-/* ============================================= */
-/* 8. MEDIA QUERIES */
-/* ============================================= */
-/* 8.1 Dispositivos grandes (lg) */
+/* MEDIA QUERIES */
 @media (max-width: 992px) {
     .testimonios-track {
-        gap: 15px;
         padding: 10px 15px;
+        gap: 20px;
     }
 }
 
-/* 8.2 Dispositivos medianos (md) */
 @media (max-width: 768px) {
     .main-intro h1 {
         font-size: 2rem;
     }
-
+    
     .main-intro p.lead {
         font-size: 1.1rem;
     }
 
-    .main-img {
-        max-width: 100%;
-        height: auto;
-    }
-
     .banner-container {
-        height: 35vh;
+        height: 35vh;     /* Menor altura en móvil */
     }
 
     .banner-text h1 {
@@ -402,46 +388,46 @@ body {
     }
 
     .testimonio-card {
-        flex: 0 0 280px;
-        min-height: 200px;
+        flex: 0 0 300px;
+        height: 230px;
+    }
+    
+    @keyframes scroll {
+        100% {
+            transform: translateX(calc(-50% - 7.5px));
+        }
+    }
+    .testimonios-track {
+        animation: scroll 120s linear infinite; /* Mismo cambio aquí */
     }
 }
 
-/* 8.3 Dispositivos pequeños (sm) */
 @media (max-width: 576px) {
-    .main-img {
-        max-width: 90%;
-    }
-
     .whatsapp-float {
         bottom: 60px;
     }
-
+    
     .testimonios-shadow {
-        padding: 1.5rem 10px;
+        padding: 1.5rem 0;
     }
-
+    
+    .testimonio-card {
+        flex: 0 0 280px;
+    }
+    
+    .testimonio-card .card-body {
+        padding: 1.25rem;
+    }
+    
     .testimonios-shadow h2 {
         font-size: 1.5rem;
-    }
-
-    .testimonios-track {
-        animation: scroll 60s linear infinite;
-        padding-left: 10px;
-        padding-right: 40%;
-    }
-
-    .testimonio-card {
-        flex: 0 0 75vw;
-        min-width: 75vw;
-        min-height: 180px;
-        padding: 1rem;
+        padding: 0 1rem;
     }
 }
 
-/* 8.4 Dispositivos extra pequeños (xs) */
 @media (max-width: 480px) {
-    .banner-container {
+
+     .banner-container {
         height: 30vh;
     }
 
@@ -453,72 +439,16 @@ body {
         font-size: 0.95rem;
     }
 
-    .navbar-brand img {
-        height: 1.8rem;
-    }
-
-    .brand-tecno,
-    .brand-sur {
-        font-size: 2rem;
-    }
-
-    .brand-parana {
-        font-size: 1rem;
-    }
-
-    .main-img {
-        max-width: 85%;
-    }
-
-    .main-intro .d-flex {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .main-intro .btn {
-        width: 100%;
-    }
-
-    .ratio-21x9 {
-        --bs-aspect-ratio: 30%;
-    }
-
-    .accordion-button {
-        font-size: 0.95rem;
-        padding: 0.8rem 1rem;
-    }
-
-    .accordion-body {
-        font-size: 0.9rem;
-    }
-
     .testimonio-card {
-        flex: 0 0 80vw;
-        min-width: 80vw;
+        flex: 0 0 260px;
+    }
+    
+    .testimonio-card .card-body {
+        padding: 1rem;
     }
     
     .testimonio-card img {
-        width: 36px;
-        height: 36px;
-    }
-}
-
-@media (max-width: 360px) {
-    .navbar-brand {
-        font-size: 1.8rem;
-    }
-
-    .brand-tecno,
-    .brand-sur {
-        font-size: 1.8rem;
-    }
-
-    .banner-text h1 {
-        font-size: 1.3rem;
-    }
-
-    .testimonio-card {
-        flex: 0 0 85vw;
-        min-width: 85vw;
+        width: 40px;
+        height: 40px;
     }
 }
