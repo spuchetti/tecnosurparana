@@ -17,8 +17,6 @@
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-
 /* Banner */
 .banner-container {
     position: relative;
@@ -36,13 +34,14 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
     z-index: 1;
 }
 
 .banner-container img {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -56,7 +55,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     z-index: 2;
     padding: 1rem;
 }
@@ -70,7 +69,7 @@
     font-size: 1.2rem;
 }
 
-/* Navbar Brand - Modificado para efecto solo en texto */
+/* Navbar Brand - Versión optimizada */
 .navbar-brand {
     font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
     font-weight: 700;
@@ -91,29 +90,18 @@
 .navbar-brand img {
     transition: transform 0.2s ease;
     transform-origin: center;
+    height: 2rem;
+    vertical-align: middle;
 }
 
-/* El pingüino no se escalará */
 .navbar-brand:hover img {
     transform: scale(1);
 }
 
 .brand-nombre {
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
     transition: transform 0.2s ease;
-}
-
-.brand-tecno::first-letter {
-    color: #232673; /* T azul */
-    display: inline-block; /* Necesario para que line-height funcione */
-    line-height: 1.38; /* Valor óptimo para la mayoría de casos */
-    vertical-align: text-top; /* Opcional: alinea con el tope del texto */
-}
-
-.brand-sur::first-letter {
-    color: #FF6A00; /* S naranja */
-    display: inline-block; /* Consistencia */
 }
 
 .brand-tecno,
@@ -123,16 +111,33 @@
     letter-spacing: 2px;
     color: #fff;
     display: inline-block;
+    vertical-align: baseline;
+}
+
+.brand-tecno::first-letter {
+    color: #232673;
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+}
+
+.brand-sur::first-letter {
+    color: #FF6A00;
+    display: inline-block;
+    vertical-align: baseline;
 }
 
 .brand-parana {
     font-size: 1.1rem;
     font-weight: 700;
     opacity: 0.85;
-    vertical-align: super;
+    vertical-align: top;
     color: #fff;
     display: inline-block;
     margin-left: 0.15em;
+    position: relative;
+    top: -0.7em; /* Ajuste fino para superíndice */
+    transform: scale(0.9);
 }
 
 /* Botones */
@@ -373,20 +378,40 @@
 }
 
 @media (max-width: 480px) {
-    .navbar-brand img { height: 1.8rem; }
+    .navbar-brand {
+        font-size: 1.7rem;
+        padding: 0.25em 0.8em;
+    }
+    
+    .navbar-brand img {
+        height: 1.6rem;
+    }
+    
     .brand-tecno,
-    .brand-sur { font-size: 2rem; }
-    .brand-parana { font-size: 1rem; }
-    .banner-container { height: 30vh; }
-    .banner-text h2 { font-size: 1.5rem; }
-    .banner-text p { font-size: 0.95rem; }
-    .testimonio-card { flex: 0 0 260px; }
-    .testimonio-card .card-body { padding: 1rem; }
-    .testimonio-card img { width: 40px; height: 40px; }
+    .brand-sur {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .brand-parana {
+        font-size: 0.95rem;
+        top: -0.7em;
+        margin-left: 0.1em;
+         transform: scale(0.9); /* Escala ligeramente diferente */
+    }
 }
 
 @media (max-width: 360px) {
-    .navbar-brand { font-size: 1.8rem; }
-    .brand-tecno,
-    .brand-sur { font-size: 1.8rem; }
+
+    .brand-parana {
+        top: -0.65em; /* Ajuste fino para pantallas muy pequeñas */
+    }
+
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+    
+    .brand-tecno::first-letter {
+        top: -0.05em;
+    }
 }
