@@ -1,32 +1,33 @@
-/* Estilos para la sección principal */
+/* Sección principal */
 .main-intro h1 {
     font-size: 2.5rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    color: #1a365d; /* Un azul más oscuro para mejor contraste */
+    color: #1a365d;
 }
 
 .main-intro p.lead {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    color: #4a5568; /* Un gris azulado más suave */
+    color: #4a5568;
 }
-.main-img {
+
+.main-img-container img {
     border: 3px solid rgba(25, 118, 210, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.main-img:hover {
+.main-img-container img:hover {
     transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Estilos para el banner */
+/* Banner */
 .banner-container {
     position: relative;
     width: 100%;
-    height: 60vh;         /* Altura proporcional a la pantalla */
+    height: 60vh;
     min-height: 250px;
     max-height: 450px;
     overflow: hidden;
@@ -38,23 +39,18 @@
 .banner-container::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
     z-index: 1;
 }
 
-
 .banner-container img {
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     object-position: center;
-    object-fit: cover; /* Cubre todo el contenedor */
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .banner-text {
@@ -64,12 +60,12 @@
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     z-index: 2;
     padding: 1rem;
 }
 
-.banner-text h1 {
+.banner-text h2 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
@@ -77,65 +73,68 @@
 .banner-text p {
     font-size: 1.2rem;
 }
+
+/* Navbar Brand - Modificado para efecto solo en texto */
 .navbar-brand {
     font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
     font-weight: 700;
     font-size: 2rem;
     letter-spacing: 1px;
     color: #fff !important;
-    background: none;
     padding: 0.3em 1em;
     border-radius: 0.7em;
-    transition: none;
-}
-
-.navbar-brand:hover {
-    transform: none;
-    text-decoration: none;
-}
-
-.brand-tecnosur,
-.brand-parana {
-    transition: transform 0.2s;
-    display: inline-block;
-}
-
-.navbar-brand:hover .brand-tecnosur,
-.navbar-brand:hover .brand-parana {
-    transform: scale(1.05);
-}
-
-.brand-nombre {
-    display: inline-block;
-    transition: transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
 }
 
 .navbar-brand:hover .brand-nombre {
     transform: scale(1.05);
 }
 
-.brand-tecnosur,
-.brand-parana {
-    transition: none;
+.navbar-brand img {
+    transition: transform 0.2s ease;
+    transform-origin: center;
 }
 
-.brand-tecnosur {
+/* El pingüino no se escalará */
+.navbar-brand:hover img {
+    transform: scale(1);
+}
+
+.brand-nombre {
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.brand-tecno::first-letter {
+    color: #232673; /* T azul */
+}
+
+.brand-sur::first-letter {
+    color: #FF6A00; /* S naranja */
+}
+
+.brand-tecno,
+.brand-sur {
     font-size: 2.3rem;
     font-weight: 800;
     letter-spacing: 2px;
+    color: #fff;
     display: inline-block;
 }
 
 .brand-parana {
     font-size: 1.1rem;
     font-weight: 700;
-    margin-left: 0.15em;
     opacity: 0.85;
     vertical-align: super;
-    letter-spacing: 1px;
+    color: #fff;
     display: inline-block;
 }
 
+/* Botones */
 .custom-btn-fixed {
     background-color: #1976d2 !important;
     border-color: #1976d2 !important;
@@ -145,9 +144,6 @@
 
 .custom-btn-fixed:hover,
 .custom-btn-fixed:focus {
-    background-color: #1976d2 !important;
-    border-color: #1976d2 !important;
-    color: #fff !important;
     transform: scale(1.04);
     box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
 }
@@ -157,7 +153,7 @@
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
 }
 
-/* Sección Testimonios - Versión Mejorada */
+/* Testimonios */
 .testimonios-shadow {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
     position: relative;
@@ -168,7 +164,6 @@
 
 .testimonios-shadow::after {
     content: "";
-    display: block;
     position: absolute;
     left: 0;
     right: 0;
@@ -197,8 +192,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
-    opacity: 1 !important;
-    transform: none !important;
 }
 
 .testimonio-card .card-body {
@@ -241,15 +234,7 @@
     margin-top: auto;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 10px));
-    }
-}
-
+/* Servicios */
 .card.servicio-card {
     opacity: 0;
     transform: translateY(30px);
@@ -257,17 +242,9 @@
     transition: transform 0.18s, box-shadow 0.18s;
 }
 
-.card.servicio-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.card.servicio-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.card.servicio-card:nth-child(3) {
-    animation-delay: 0.3s;
-}
+.card.servicio-card:nth-child(1) { animation-delay: 0.1s; }
+.card.servicio-card:nth-child(2) { animation-delay: 0.2s; }
+.card.servicio-card:nth-child(3) { animation-delay: 0.3s; }
 
 .card.servicio-card:hover,
 .card.servicio-card:focus-within {
@@ -284,7 +261,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1rem;
     font-size: 2.2rem;
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
 }
@@ -296,6 +273,7 @@
     margin-bottom: 2rem;
 }
 
+/* WhatsApp flotante */
 .whatsapp-float {
     position: fixed;
     bottom: 80px;
@@ -320,12 +298,6 @@
 }
 
 /* Animaciones */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -333,11 +305,19 @@
     }
 }
 
-/* MENÚ HAMBURGUESA */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 10px));
+    }
+}
+
+/* Navbar toggler */
 .navbar-toggler {
     border: none;
     padding: 0.5rem;
-    margin-left: auto;
 }
 
 .navbar-toggler:focus {
@@ -351,7 +331,7 @@
     height: 1.5em;
 }
 
-/* MEDIA QUERIES */
+/* Media Queries */
 @media (max-width: 992px) {
     .testimonios-track {
         padding: 10px 15px;
@@ -360,65 +340,31 @@
 }
 
 @media (max-width: 768px) {
-    .main-intro h1 {
-        font-size: 2rem;
-    }
-    
-    .main-intro p.lead {
-        font-size: 1.1rem;
-    }
-
-    .banner-container {
-        height: 35vh;     /* Menor altura en móvil */
-    }
-
-    .banner-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .banner-text p {
-        font-size: 1rem;
-    }
-
+    .main-intro h1 { font-size: 2rem; }
+    .main-intro p.lead { font-size: 1.1rem; }
+    .banner-container { height: 35vh; }
+    .banner-text h2 { font-size: 1.8rem; }
+    .banner-text p { font-size: 1rem; }
     .whatsapp-float {
         bottom: 70px;
         width: 50px;
         height: 50px;
         font-size: 1.8rem;
     }
-
     .testimonio-card {
         flex: 0 0 300px;
         height: 230px;
     }
-    
     @keyframes scroll {
-        100% {
-            transform: translateX(calc(-50% - 7.5px));
-        }
-    }
-    .testimonios-track {
-        animation: scroll 120s linear infinite; /* Mismo cambio aquí */
+        100% { transform: translateX(calc(-50% - 7.5px)); }
     }
 }
 
 @media (max-width: 576px) {
-    .whatsapp-float {
-        bottom: 60px;
-    }
-    
-    .testimonios-shadow {
-        padding: 1.5rem 0;
-    }
-    
-    .testimonio-card {
-        flex: 0 0 280px;
-    }
-    
-    .testimonio-card .card-body {
-        padding: 1.25rem;
-    }
-    
+    .whatsapp-float { bottom: 60px; }
+    .testimonios-shadow { padding: 1.5rem 0; }
+    .testimonio-card { flex: 0 0 280px; }
+    .testimonio-card .card-body { padding: 1.25rem; }
     .testimonios-shadow h2 {
         font-size: 1.5rem;
         padding: 0 1rem;
@@ -426,29 +372,20 @@
 }
 
 @media (max-width: 480px) {
+    .navbar-brand img { height: 1.8rem; }
+    .brand-tecno,
+    .brand-sur { font-size: 2rem; }
+    .brand-parana { font-size: 1rem; }
+    .banner-container { height: 30vh; }
+    .banner-text h2 { font-size: 1.5rem; }
+    .banner-text p { font-size: 0.95rem; }
+    .testimonio-card { flex: 0 0 260px; }
+    .testimonio-card .card-body { padding: 1rem; }
+    .testimonio-card img { width: 40px; height: 40px; }
+}
 
-     .banner-container {
-        height: 30vh;
-    }
-
-    .banner-text h1 {
-        font-size: 1.5rem;
-    }
-
-    .banner-text p {
-        font-size: 0.95rem;
-    }
-
-    .testimonio-card {
-        flex: 0 0 260px;
-    }
-    
-    .testimonio-card .card-body {
-        padding: 1rem;
-    }
-    
-    .testimonio-card img {
-        width: 40px;
-        height: 40px;
-    }
+@media (max-width: 360px) {
+    .navbar-brand { font-size: 1.8rem; }
+    .brand-tecno,
+    .brand-sur { font-size: 1.8rem; }
 }
