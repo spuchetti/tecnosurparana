@@ -1,23 +1,169 @@
-/* Sección principal */
+/* ===== Estilos Generales ===== */
+:root {
+    --primary-color: #1976d2;
+    --secondary-color: #1a365d;
+    --text-color: #4a5568;
+    --white: #fff;
+    --black: #000;
+    --gradient-dark: rgba(0, 0, 0, 0.6);
+    --gradient-light: rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    position: relative;
+    padding: 0.5rem 1rem;
+    background-color: var(--black);
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo/Marca */
+.navbar-brand-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1030;
+}
+
+.navbar-brand {
+    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--white) !important;
+    padding: 0.3em 0.6em;
+    border-radius: 0.7em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    transition: all 0.3s ease;
+    font-size: 2rem;
+}
+
+.navbar-brand:hover .brand-nombre {
+    transform: scale(1.05);
+}
+
+.navbar-brand img {
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    height: 2rem;
+    vertical-align: middle;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1);
+}
+
+.brand-nombre {
+    display: inline-flex;
+    align-items: baseline;
+    transition: transform 0.2s ease;
+}
+
+.brand-tecno,
+.brand-sur {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--white);
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+.brand-tecno::first-letter {
+    color: #232673;
+}
+
+.brand-sur::first-letter {
+    color: #FF6A00;
+}
+
+.brand-parana {
+    font-size: 1.1rem;
+    font-weight: 700;
+    opacity: 0.85;
+    vertical-align: top;
+    color: var(--white);
+    display: inline-block;
+    margin-left: 0.15em;
+    position: relative;
+    top: -0.7em;
+    transform: scale(0.9);
+}
+
+/* Menú Hamburguesa */
+.navbar-toggler {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1020;
+    border: none;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    background: transparent;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.5em;
+    height: 1.5em;
+}
+
+/* Menú Colapsable */
+.navbar-collapse {
+    flex-grow: 0;
+    margin-left: auto;
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1010;
+        padding: 1rem;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+/* ===== Sección Principal ===== */
 .main-intro h1 {
     font-size: 2.5rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    color: #1a365d;
+    color: var(--secondary-color);
 }
 
 .main-intro p.lead {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    color: #4a5568;
+    color: var(--text-color);
 }
 
 .main-img-container img {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Banner */
+/* ===== Banner ===== */
 .banner-container {
     position: relative;
     width: 100%;
@@ -34,7 +180,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    background: linear-gradient(to bottom, var(--gradient-light), var(--gradient-dark));
     z-index: 1;
 }
 
@@ -54,7 +200,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     z-index: 2;
     padding: 1rem;
@@ -69,82 +215,11 @@
     font-size: 1.2rem;
 }
 
-/* Navbar Brand - Versión optimizada */
-.navbar-brand {
-    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    color: #fff !important;
-    padding: 0.3em 1em;
-    border-radius: 0.7em;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3em;
-}
-
-.navbar-brand:hover .brand-nombre {
-    transform: scale(1.05);
-}
-
-.navbar-brand img {
-    transition: transform 0.2s ease;
-    transform-origin: center;
-    height: 2rem;
-    vertical-align: middle;
-}
-
-.navbar-brand:hover img {
-    transform: scale(1);
-}
-
-.brand-nombre {
-    display: inline-flex;
-    align-items: baseline;
-    transition: transform 0.2s ease;
-}
-
-.brand-tecno,
-.brand-sur {
-    font-size: 2.3rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: #fff;
-    display: inline-block;
-    vertical-align: baseline;
-}
-
-.brand-tecno::first-letter {
-    color: #232673;
-    display: inline-block;
-    vertical-align: baseline;
-    position: relative;
-}
-
-.brand-sur::first-letter {
-    color: #FF6A00;
-    display: inline-block;
-    vertical-align: baseline;
-}
-
-.brand-parana {
-    font-size: 1.1rem;
-    font-weight: 700;
-    opacity: 0.85;
-    vertical-align: top;
-    color: #fff;
-    display: inline-block;
-    margin-left: 0.15em;
-    position: relative;
-    top: -0.7em; /* Ajuste fino para superíndice */
-    transform: scale(0.9);
-}
-
-/* Botones */
+/* ===== Botones ===== */
 .custom-btn-fixed {
-    background-color: #1976d2 !important;
-    border-color: #1976d2 !important;
-    color: #fff !important;
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--white) !important;
     transition: transform 0.15s, box-shadow 0.15s;
 }
 
@@ -159,7 +234,7 @@
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
 }
 
-/* Testimonios */
+/* ===== Testimonios ===== */
 .testimonios-shadow {
     box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
     position: relative;
@@ -235,12 +310,7 @@
     flex-shrink: 0;
 }
 
-.testimonio-card .d-flex {
-    flex-shrink: 0;
-    margin-top: auto;
-}
-
-/* Servicios */
+/* ===== Servicios ===== */
 .card.servicio-card {
     opacity: 0;
     transform: translateY(30px);
@@ -260,7 +330,7 @@
 
 .servicio-icono {
     background: #e3f0fc;
-    color: #1976d2 !important;
+    color: var(--primary-color) !important;
     border-radius: 50%;
     width: 64px;
     height: 64px;
@@ -274,18 +344,18 @@
 
 .servicios-titulo {
     display: inline-block;
-    border-bottom: 3px solid #1976d2;
+    border-bottom: 3px solid var(--primary-color);
     padding-bottom: 0.3rem;
     margin-bottom: 2rem;
 }
 
-/* WhatsApp flotante */
+/* ===== WhatsApp flotante ===== */
 .whatsapp-float {
     position: fixed;
     bottom: 80px;
     right: 24px;
     background: #25d366;
-    color: #fff;
+    color: var(--white);
     border-radius: 50%;
     width: 56px;
     height: 56px;
@@ -303,7 +373,7 @@
     transform: scale(1.1);
 }
 
-/* Animaciones */
+/* ===== Animaciones ===== */
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -320,28 +390,39 @@
     }
 }
 
-/* Navbar toggler */
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
+/* ===== Media Queries ===== */
+@media (max-width: 1200px) {
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+    
+    .brand-tecno,
+    .brand-sur {
+        font-size: 2rem;
+    }
+    
+    .brand-parana {
+        font-size: 1rem;
+    }
 }
 
-.navbar-toggler:focus {
-    box-shadow: none;
-    outline: none;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    width: 1.5em;
-    height: 1.5em;
-}
-
-/* Media Queries */
 @media (max-width: 992px) {
     .testimonios-track {
         padding: 10px 15px;
         gap: 20px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.7rem;
+    }
+    
+    .brand-tecno,
+    .brand-sur {
+        font-size: 1.9rem;
+    }
+    
+    .brand-parana {
+        font-size: 0.95rem;
     }
 }
 
@@ -361,6 +442,21 @@
         flex: 0 0 300px;
         height: 230px;
     }
+    
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+    
+    .brand-tecno,
+    .brand-sur {
+        font-size: 1.7rem;
+    }
+    
+    .brand-parana {
+        font-size: 0.9rem;
+        top: -0.65em;
+    }
+    
     @keyframes scroll {
         100% { transform: translateX(calc(-50% - 7.5px)); }
     }
@@ -375,43 +471,44 @@
         font-size: 1.5rem;
         padding: 0 1rem;
     }
-}
-
-@media (max-width: 480px) {
+    
     .navbar-brand {
-        font-size: 1.7rem;
-        padding: 0.25em 0.8em;
+        font-size: 1.4rem;
+        padding: 0.15em 0.4em;
     }
     
     .navbar-brand img {
-        height: 1.6rem;
+        height: 1.5rem;
     }
     
     .brand-tecno,
     .brand-sur {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         letter-spacing: 1px;
     }
     
     .brand-parana {
-        font-size: 0.95rem;
-        top: -0.7em;
-        margin-left: 0.1em;
-         transform: scale(0.9); /* Escala ligeramente diferente */
+        font-size: 0.8rem;
+        top: -0.6em;
     }
 }
 
-@media (max-width: 360px) {
-
-    .brand-parana {
-        top: -0.65em; /* Ajuste fino para pantallas muy pequeñas */
-    }
-
+@media (max-width: 400px) {
     .navbar-brand {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
     
-    .brand-tecno::first-letter {
-        top: -0.05em;
+    .brand-tecno,
+    .brand-sur {
+        font-size: 1.3rem;
+    }
+    
+    .brand-parana {
+        font-size: 0.7rem;
+        top: -0.5em;
+    }
+    
+    .navbar-brand img {
+        height: 1.3rem;
     }
 }
