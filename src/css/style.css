@@ -575,23 +575,13 @@ body {
         height: 1.5rem;
     }
     
-    .brand-tecno,
-    .brand-sur {
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-    }
-    
-    .brand-parana {
-        font-size: 0.8rem;
-        top: -0.6em;
-    }
 }
 
 @media (max-width: 480px) {
     .navbar-brand img { height: 1.8rem; }
     .brand-tecno,
     .brand-sur { font-size: 2rem; }
-    .brand-parana { font-size: 0.75rem; }
+    .brand-parana { font-size: 0.70rem; }
     .banner-container { height: 30vh; }
     .banner-text h2 { font-size: 1.5rem; }
     .banner-text p { font-size: 0.95rem; }
@@ -604,7 +594,7 @@ body {
     .navbar-brand { font-size: 1.8rem; }
     .brand-tecno,
     .brand-sur { font-size: 1.8rem; }
-    .brand-parana { font-size: 0.9rem; }
+    .brand-parana { font-size: 0.65rem; }
     .banner-text h2 { font-size: 1.3rem; }
     .banner-text p { font-size: 0.85rem; }
     .testimonio-card { flex: 0 0 240px; }
