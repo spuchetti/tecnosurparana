@@ -1,4 +1,4 @@
-/* ===== Estilos Generales ===== */
+/* ===== Variables CSS ===== */
 :root {
     --primary-color: #1976d2;
     --secondary-color: #1a365d;
@@ -7,61 +7,62 @@
     --black: #000;
     --gradient-dark: rgba(0, 0, 0, 0.6);
     --gradient-light: rgba(0, 0, 0, 0.4);
+    --light-blue: #e3f0fc;
+    --whatsapp-green: #25d366;
+    --whatsapp-hover: #1ebe57;
+    --shadow-light: rgba(25, 118, 210, 0.1);
+    --shadow-medium: rgba(25, 118, 210, 0.15);
+    --shadow-dark: rgba(25, 118, 210, 0.2);
 }
 
-/* ===== Navbar ===== */
+/* ===== Reset y Estilos Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ===== Estructura Principal ===== */
+/* Navbar */
 .navbar {
-    position: relative;
+    background-color: var(--primary-color);
     padding: 0.5rem 1rem;
-    background-color: var(--black);
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-.navbar-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Logo/Marca */
-.navbar-brand-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 1030;
-}
-
 .navbar-brand {
-    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
     font-weight: 700;
+    font-size: 2rem;
     letter-spacing: 1px;
     color: var(--white) !important;
-    padding: 0.3em 0.6em;
-    border-radius: 0.7em;
+    padding: 0.3em 1em;
     display: inline-flex;
     align-items: center;
     gap: 0.3em;
-    transition: all 0.3s ease;
-    font-size: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand img {
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    transition: transform 0.2s ease;
+    transform-origin: center;
 }
 
 .navbar-brand:hover .brand-nombre {
     transform: scale(1.05);
 }
 
-.navbar-brand img {
-    transition: transform 0.2s ease;
-    transform-origin: center;
-    height: 2rem;
-    vertical-align: middle;
-}
-
-
-
 .brand-nombre {
     display: inline-flex;
-    align-items: baseline;
+    align-items: center;
     transition: transform 0.2s ease;
 }
 
@@ -72,14 +73,13 @@
     letter-spacing: 2px;
     color: var(--white);
     display: inline-block;
-    vertical-align: baseline;
 }
 
-.brand-tecno::first-letter {
+.brand-tecno{
     color: #232673;
 }
 
-.brand-sur::first-letter {
+.brand-sur {
     color: #FF6A00;
 }
 
@@ -87,18 +87,31 @@
     font-size: 1.1rem;
     font-weight: 700;
     opacity: 0.85;
-    vertical-align: top;
+    vertical-align: super;
     color: var(--white);
     display: inline-block;
-    margin-left: 0.15em;
-    position: relative;
-    top: -0.7em;
-    transform: scale(0.9);
 }
 
-/* Menú Hamburguesa */
+.navbar-nav .nav-link {
+    color: var(--white) !important;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
+    color: var(--light-blue) !important;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+/* Navbar Toggler */
 .navbar-toggler {
-    display: block; /* Oculto por defecto */
+    border: none;
+    padding: 0.5rem;
 }
 
 .navbar-toggler:focus {
@@ -112,15 +125,7 @@
     height: 1.5em;
 }
 
-/* Menú Colapsable */
-.navbar-collapse {
-    flex-grow: 0;
-    margin-left: auto;
-}
-
-
-
-/* ===== Sección Principal ===== */
+/* Sección Principal */
 .main-intro h1 {
     font-size: 2.5rem;
     line-height: 1.2;
@@ -132,14 +137,13 @@
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    color: var(--text-color);
 }
 
 .main-img-container img {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* ===== Banner ===== */
+/* Banner */
 .banner-container {
     position: relative;
     width: 100%;
@@ -191,28 +195,58 @@
     font-size: 1.2rem;
 }
 
-/* ===== Botones ===== */
-.custom-btn-fixed {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-    color: var(--white) !important;
-    transition: transform 0.15s, box-shadow 0.15s;
+/* Cards */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.custom-btn-fixed:hover,
-.custom-btn-fixed:focus {
-    transform: scale(1.04);
-    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.custom-btn-fixed:active {
-    transform: scale(0.98);
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.18);
+.card img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-/* ===== Testimonios ===== */
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 1rem;
+    text-align: center;
+}
+
+.card-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Testimonios */
 .testimonios-shadow {
-    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
+    box-shadow: 0 8px 32px var(--shadow-light);
     position: relative;
     overflow-x: hidden;
     padding: 2rem 0;
@@ -275,7 +309,7 @@
 
 .testimonio-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.2);
+    box-shadow: 0 8px 24px var(--shadow-dark);
 }
 
 .testimonio-card img {
@@ -286,7 +320,7 @@
     flex-shrink: 0;
 }
 
-/* ===== Servicios ===== */
+/* Servicios */
 .card.servicio-card {
     opacity: 0;
     transform: translateY(30px);
@@ -301,11 +335,11 @@
 .card.servicio-card:hover,
 .card.servicio-card:focus-within {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+    box-shadow: 0 8px 32px var(--shadow-dark);
 }
 
 .servicio-icono {
-    background: #e3f0fc;
+    background: var(--light-blue);
     color: var(--primary-color) !important;
     border-radius: 50%;
     width: 64px;
@@ -315,7 +349,7 @@
     justify-content: center;
     margin: 0 auto 1rem;
     font-size: 2.2rem;
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+    box-shadow: 0 2px 8px var(--shadow-light);
 }
 
 .servicios-titulo {
@@ -325,12 +359,31 @@
     margin-bottom: 2rem;
 }
 
-/* ===== WhatsApp flotante ===== */
+/* Botones */
+.custom-btn-fixed {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--white) !important;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.custom-btn-fixed:hover,
+.custom-btn-fixed:focus {
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px var(--shadow-medium);
+}
+
+.custom-btn-fixed:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px var(--shadow-dark);
+}
+
+/* WhatsApp flotante */
 .whatsapp-float {
     position: fixed;
     bottom: 80px;
     right: 24px;
-    background: #25d366;
+    background: var(--whatsapp-green);
     color: var(--white);
     border-radius: 50%;
     width: 56px;
@@ -345,11 +398,67 @@
 }
 
 .whatsapp-float:hover {
-    background: #1ebe57;
+    background: var(--whatsapp-hover);
     transform: scale(1.1);
 }
 
-/* ===== Animaciones ===== */
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Efecto de nieve */
+#snow-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: var(--white);
+    font-size: 1.5rem;
+    pointer-events: none;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+.snowflake:hover {
+    animation-play-state: paused;
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.snowflake:active {
+    animation-play-state: paused;
+    transform: scale(1.5);
+    opacity: 0.5;
+}
+
+/* Animaciones */
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -363,6 +472,15 @@
     }
     100% {
         transform: translateX(calc(-50% - 10px));
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
     }
 }
 
@@ -438,22 +556,6 @@
     }
 }
 
-@media (max-width: 767.98px) {
-     .navbar-collapse {
-    position: fixed !important; /* Fijo para evitar desplazamiento */
-    top: 60px !important; /* Ajusta según la altura de tu navbar */
-    left: 0 !important;
-    right: 0 !important;
-    background: #1976d2 !important;
-    z-index: 9999 !important;
-    padding: 1rem !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
-  }
-  .navbar-toggler {
-    display: block !important;
-  }
-}
-
 @media (max-width: 576px) {
     .whatsapp-float { bottom: 60px; }
     .testimonios-shadow { padding: 1.5rem 0; }
@@ -485,22 +587,26 @@
     }
 }
 
-@media (max-width: 400px) {
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-    
+@media (max-width: 480px) {
+    .navbar-brand img { height: 1.8rem; }
     .brand-tecno,
-    .brand-sur {
-        font-size: 1.3rem;
-    }
-    
-    .brand-parana {
-        font-size: 0.7rem;
-        top: -0.5em;
-    }
-    
-    .navbar-brand img {
-        height: 1.3rem;
-    }
+    .brand-sur { font-size: 2rem; }
+    .brand-parana { font-size: 1rem; }
+    .banner-container { height: 30vh; }
+    .banner-text h2 { font-size: 1.5rem; }
+    .banner-text p { font-size: 0.95rem; }
+    .testimonio-card { flex: 0 0 260px; }
+    .testimonio-card .card-body { padding: 1rem; }
+    .testimonio-card img { width: 40px; height: 40px; }
+}
+
+@media (max-width: 360px) {
+    .navbar-brand { font-size: 1.8rem; }
+    .brand-tecno,
+    .brand-sur { font-size: 1.8rem; }
+    .brand-parana { font-size: 0.9rem; }
+    .banner-text h2 { font-size: 1.3rem; }
+    .banner-text p { font-size: 0.85rem; }
+    .testimonio-card { flex: 0 0 240px; }
+    .testimonio-card img { width: 36px; height: 36px; }
 }
