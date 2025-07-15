@@ -57,9 +57,7 @@
     vertical-align: middle;
 }
 
-.navbar-brand:hover img {
-    transform: scale(1.1);
-}
+
 
 .brand-nombre {
     display: inline-flex;
