@@ -8,7 +8,8 @@
     <meta name="description"
         content="🔧 Servicio técnico especializado en reparación de aires acondicionados, heladeras y lavarropas en Paraná. Instalación profesional, mantenimiento y urgencias 24/7. ¡Contactanos ahora!" />
     <meta property="og:title" content="TecnoSur Paraná | Reparación de Equipos de Refrigeración" />
-    <meta property="og:description" content="Servicio técnico especializado en refrigeración en Paraná. Urgencias 24 horas." />
+    <meta property="og:description"
+        content="Servicio técnico especializado en refrigeración en Paraná. Urgencias 24 horas." />
     <meta property="og:image" content="https://tecnosurparana.vercel.app/src/img/hogar.png" />
     <meta property="og:url" content="https://tecnosurparana.vercel.app" />
     <meta property="og:type" content="website" />
@@ -22,8 +23,8 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
     <!-- Preload recursos críticos -->
-    <link rel="preload" href="src/img/hogar.webp" as="image" 
-        imagesrcset="src/img/hogar-400.webp 400w, src/img/hogar-800.webp 800w" 
+    <link rel="preload" href="src/img/hogar.webp" as="image"
+        imagesrcset="src/img/hogar-400.webp 400w, src/img/hogar-800.webp 800w"
         imagesizes="(max-width: 600px) 400px, 800px" />
     <link rel="preload" href="src/css/style.css" as="style" />
 
@@ -38,39 +39,32 @@
     <title>TecnoSur Paraná | Reparación e Instalación de Equipos de Refrigeración en Paraná</title>
     <link rel="canonical" href="https://tecnosurparana.vercel.app/index.html" />
 
-    <!-- Estilos mínimos críticos para render inicial -->
+
+    <!-- CSS crítico inline -->
     <style>
+        /* Estilos mínimos para el render inicial */
         .navbar {
             display: flex;
-            min-height: 56px;
         }
-        .banner-container::before {
-            content: "";
-            display: block;
-            padding-top: 56.25%;
+
+        .banner-container {
+            position: relative;
         }
-        .bi::before {
-            display: inline-block;
-            font-family: bootstrap-icons !important;
-            font-style: normal;
-            font-weight: normal !important;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-            vertical-align: -.125em;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+
+        /* Agrega más según sea necesario */
     </style>
 
     <!-- CSS no bloqueante -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'" crossorigin />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'" crossorigin />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"
+        media="print" onload="this.media='all'" />
     <link href="src/css/style.css" rel="stylesheet" media="print" onload="this.media='all'" />
 
     <!-- Fallback sin JS -->
     <noscript>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            rel="stylesheet" />
         <link href="src/css/style.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     </noscript>
@@ -109,10 +103,12 @@
 
 <body>
     <nav class="navbar navbar-dark bg-primary navbar-expand-md position-relative overflow-hidden">
-        <canvas id="snow-canvas" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
+        <canvas id="snow-canvas"
+            style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
         <div class="container position-relative" style="z-index:3;">
             <a class="navbar-brand" href="index.html">
-                <img src="src/img/penguin.webp" alt="Pingüino" style="height: 2rem; vertical-align: middle; margin-right: 0.5em;" width="32" height="32" />
+                <img src="src/img/penguin.webp" alt="Pingüino"
+                    style="height: 2rem; vertical-align: middle; margin-right: 0.5em;">
                 <span class="brand-nombre">
                     <span class="brand-tecno">Tecno</span>
                     <span class="brand-sur">Sur</span>
@@ -120,11 +116,13 @@
                 </span>
             </a>
 
+            <!-- Botón Hamburguesa -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Menú colapsable -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -143,8 +141,8 @@
 
     <div class="banner-container">
         <img src="src/img/hogar.webp" srcset="src/img/hogar-400.webp 400w, src/img/hogar-800.webp 800w"
-            sizes="(max-width: 600px) 400px, 800px" alt="Banner TecnoSur Paraná" class="img-fluid w-100" fetchpriority="high"
-            loading="eager" width="800" height="450" />
+            sizes="(max-width: 600px) 400px, 800px" alt="Banner TecnoSur Paraná" class="img-fluid w-100"
+            fetchpriority="high" loading="eager" width="800" height="450" />
         <div class="banner-text">
             <h2 class="display-4 fw-bold">Expertos en Refrigeración</h2>
             <p class="lead">Soluciones integrales para tu hogar y negocio</p>
@@ -182,7 +180,8 @@
                     <div class="card-body text-center">
                         <i class="bi bi-snow servicio-icono mb-3"></i>
                         <h5 class="card-title">Reparación de Aires, Heladeras y Lavarropas</h5>
-                        <p class="card-text">Solucionamos fallas en equipos split, centrales, heladeras y lavarropas familiares o comerciales.</p>
+                        <p class="card-text">Solucionamos fallas en equipos split, centrales, heladeras y lavarropas
+                            familiares o comerciales.</p>
                     </div>
                 </div>
             </div>
@@ -191,7 +190,8 @@
                     <div class="card-body text-center">
                         <i class="bi bi-tools servicio-icono mb-3"></i>
                         <h5 class="card-title">Instalación de Equipos</h5>
-                        <p class="card-text">Instalamos aires acondicionados y sistemas de refrigeración de todo tipo, garantizando seguridad y eficiencia.</p>
+                        <p class="card-text">Instalamos aires acondicionados y sistemas de refrigeración de todo tipo,
+                            garantizando seguridad y eficiencia.</p>
                     </div>
                 </div>
             </div>
@@ -200,7 +200,8 @@
                     <div class="card-body text-center">
                         <i class="bi bi-shield-check servicio-icono mb-3"></i>
                         <h5 class="card-title">Mantenimiento y Asesoramiento</h5>
-                        <p class="card-text">Ofrecemos mantenimiento preventivo y asesoramiento para prolongar la vida útil de tus equipos.</p>
+                        <p class="card-text">Ofrecemos mantenimiento preventivo y asesoramiento para prolongar la vida
+                            útil de tus equipos.</p>
                     </div>
                 </div>
             </div>
@@ -238,7 +239,8 @@
                         ¿Atienden urgencias fuera de horario?
                     </button>
                 </h2>
-                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1"
+                    data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         Sí, ofrecemos atención las 24 horas para emergencias de refrigeración.
                     </div>
@@ -246,12 +248,13 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="faq2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2"
-                        aria-expanded="false" aria-controls="collapse2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                         ¿Trabajan con todas las marcas de aire acondicionado, heladeras y lavarropas?
                     </button>
                 </h2>
-                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+                    data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         Sí, contamos con experiencia en todas las marcas y modelos del mercado.
                     </div>
@@ -259,25 +262,28 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="faq3">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3"
-                        aria-expanded="false" aria-controls="collapse3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                         ¿Ofrecen garantía por sus servicios? ¿De cuánto tiempo?
                     </button>
                 </h2>
-                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                    data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Sí, todos nuestros trabajos cuentan con 1 año de garantía. La garantía cubre defectos de mano de obra y materiales proporcionados por nosotros.
+                        Sí, todos nuestros trabajos cuentan con 1 año de garantía. La garantía cubre defectos de mano de
+                        obra y materiales proporcionados por nosotros.
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="faq4">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4"
-                        aria-expanded="false" aria-controls="collapse4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                         ¿Qué formas de pago aceptan?
                     </button>
                 </h2>
-                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
+                    data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         Efectivo o transferencia.
                     </div>
@@ -293,18 +299,22 @@
                     <h5 class="mb-3">Contacto</h5>
                     <ul class="list-unstyled mb-0">
                         <li><i class="bi bi-geo-alt-fill"></i> Riacho Paracao 372, E3100 Paraná, Entre Ríos</li>
-                        <li><i class="bi bi-telephone-fill"></i> Teléfono: <a href="tel:+54343154572088" class="text-white text-decoration-underline">0343 15-457-2088</a></li>
-                        <li><i class="bi bi-envelope-fill"></i> Email: <a href="mailto:tecnosurparana@gmail.com" class="text-white text-decoration-underline">tecnosurparana@gmail.com</a></li>
+                        <li><i class="bi bi-telephone-fill"></i> Teléfono: <a href="tel:+54343154572088"
+                                class="text-white text-decoration-underline">0343 15-457-2088</a></li>
+                        <li><i class="bi bi-envelope-fill"></i> Email: <a href="mailto:tecnosurparana@gmail.com"
+                                class="text-white text-decoration-underline">tecnosurparana@gmail.com</a></li>
                         <li><i class="bi bi-clock-fill"></i> Horario: Abierto las 24 horas</li>
                     </ul>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <h5 class="mb-3">Seguinos</h5>
-                    <a href="https://www.instagram.com/tecnosurparana" class="text-white me-3" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener">
+                    <a href="https://www.instagram.com/tecnosurparana" class="text-white me-3" title="Instagram"
+                        aria-label="Instagram" target="_blank" rel="noopener">
                         <i class="bi bi-instagram fs-4"></i>
                     </a>
                     <a href="#" class="text-white me-3" title="Facebook"><i class="bi bi-facebook fs-4"></i></a>
-                    <a href="https://wa.me/54343154572088?text=Hola%20TecnoSur%20Paraná,%20quisiera%20hacer%20una%20consulta" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <a href="https://wa.me/54343154572088?text=Hola%20TecnoSur%20Paraná,%20quisiera%20hacer%20una%20consulta"
+                        class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
                         <i class="bi bi-whatsapp"></i>
                     </a>
                 </div>

@@ -100,15 +100,7 @@
 
 /* Menú Hamburguesa */
 .navbar-toggler {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1020;
-    border: none;
-    padding: 0.5rem;
-    margin-left: 0.5rem;
-    background: transparent;
+    display: none; /* Oculto por defecto */
 }
 
 .navbar-toggler:focus {
@@ -128,21 +120,7 @@
     margin-left: auto;
 }
 
-@media (max-width: 992px) {
-    .navbar-collapse {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 1010;
-        padding: 1rem;
-    }
-    
-    .navbar-nav {
-        text-align: center;
-    }
-}
+
 
 /* ===== Sección Principal ===== */
 .main-intro h1 {
@@ -459,6 +437,43 @@
     
     @keyframes scroll {
         100% { transform: translateX(calc(-50% - 7.5px)); }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color); /* Color consistente con tu diseño */
+        z-index: 1010;
+        padding: 1rem;
+        border-radius: 0 0 0.5rem 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    .brand-tecno, .brand-sur {
+        font-size: 1.6rem;
+    }
+    .brand-parana {
+        font-size: 0.85rem;
+    }
+
+    .navbar-toggler {
+        display: block; /* Solo visible en móviles */
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
+        margin: 0.25rem 0;
     }
 }
 
