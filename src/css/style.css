@@ -1,6 +1,6 @@
 /* ===== Variables CSS ===== */
 :root {
-    --primary-color: #1976d2;
+     --primary-color: #1976d2;
     --secondary-color: #1a365d;
     --text-color: #4a5568;
     --white: #fff;
@@ -15,19 +15,38 @@
     --shadow-dark: rgba(25, 118, 210, 0.2);
 }
 
+/* ===== Global Defaults ===== */
+html {
+    font-size: clamp(15px, 1.2vw, 18px);
+    overflow-x: hidden;
+}
+
+
 /* ===== Reset y Estilos Base ===== */
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
 }
 
+/* ===== Utility Classes ===== */
+.text-primary { color: var(--primary-color) !important; }
+.bg-primary   { background-color: var(--primary-color) !important; }
+.shadow-light  { box-shadow: 0 4px 12px var(--shadow-light) !important; }
+.shadow-medium { box-shadow: 0 4px 16px var(--shadow-medium) !important; }
+.shadow-dark   { box-shadow: 0 6px 24px var(--shadow-dark) !important; }
+
+
 /* ===== Estructura Principal ===== */
-/* Navbar */
+/* ==========================
+      NAVBAR
+   ========================== */
 .navbar {
     background-color: var(--primary-color);
     padding: 0.5rem 1rem;
@@ -35,6 +54,7 @@ body {
     top: 0;
     z-index: 1000;
 }
+
 
 .navbar-brand {
     font-weight: 700;
@@ -50,11 +70,10 @@ body {
 
 .navbar-brand img {
     height: 2rem;
+    margin-right: 0.5rem;
     vertical-align: middle;
-    margin-right: 0.5em;
-    transition: transform 0.2s ease;
-    transform-origin: center;
 }
+
 
 .navbar-brand:hover .brand-nombre {
     transform: scale(1.05);
@@ -68,28 +87,22 @@ body {
 
 .brand-tecno,
 .brand-sur {
-    font-size: 2.3rem;
+    font-size: clamp(1.4rem, 5vw, 2.3rem);
     font-weight: 800;
     letter-spacing: 2px;
-    color: var(--white);
     display: inline-block;
+    color: var(--white);
 }
 
-.brand-tecno{
-    color: #232673;
-}
-
-.brand-sur {
-    color: #FF6A00;
-}
-
+.brand-tecno { color:#232673; }
+.brand-sur   { color:#FF6A00; }
 .brand-parana {
-    font-size: 1.1rem;
+    font-size: clamp(0.6rem, 3.2vw, 1.1rem);
     font-weight: 700;
     opacity: 0.85;
     vertical-align: super;
-    color: var(--white);
     display: inline-block;
+    color: var(--white);
 }
 
 .navbar-nav .nav-link {
@@ -109,104 +122,100 @@ body {
 }
 
 /* Navbar Toggler */
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-}
+.navbar-toggler { border-color: rgba(255,255,255,0.75); }
+.navbar-toggler-icon { filter: brightness(0) invert(1); }
 
 .navbar-toggler:focus {
     box-shadow: none;
     outline: none;
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    width: 1.5em;
-    height: 1.5em;
-}
 
 /* Sección Principal */
-.main-intro h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: var(--secondary-color);
-}
-
-.main-intro p.lead {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
+.main-intro h1 {font-size: 2.5rem; line-height: 1.2; color: var(--secondary-color); font-weight: 700;}
+.main-intro p.lead { font-size:1.25rem; max-width:40ch; }
 
 .main-img-container img {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Banner */
+/* ==========================
+      BANNER / HERO
+   ========================== */
 .banner-container {
     position: relative;
     width: 100%;
-    height: 60vh;
-    min-height: 250px;
-    max-height: 450px;
+    aspect-ratio: 16/9;
+    height: auto;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.banner-container::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, var(--gradient-light), var(--gradient-dark));
-    z-index: 1;
+
+.banner-container::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(var(--gradient-dark),var(--gradient-light));
+    z-index:1;
 }
 
 .banner-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
 }
 
-.banner-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.banner-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
     color: var(--white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    z-index: 2;
-    padding: 1rem;
 }
 
-.banner-text h2 {
-    font-size: 2.5rem;
+.banner-content h1 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    font-weight: 800;
     margin-bottom: 0.5rem;
 }
 
-.banner-text p {
-    font-size: 1.2rem;
+.banner-content p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin-bottom: 1.2rem;
 }
 
-/* Cards */
+.banner-text {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:var(--white);
+    text-shadow:2px 2px 4px rgba(0,0,0,.6);
+    z-index:2;
+    padding:1rem;
+}
+
+.banner-text h2 { font-size:2.5rem; margin-bottom:.5rem; }
+.banner-text p  { font-size:1.2rem; }
+
+/* ==========================
+      GENERIC CARD BASE
+   ========================== */
 .card {
-    border: none;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border:none;
+    border-radius:.5rem;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+.card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 8px 24px rgba(0,0,0,.15);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
 
 .card img {
     border-radius: 0.5rem 0.5rem 0 0;
@@ -244,7 +253,12 @@ body {
     font-weight: 600;
 }
 
-/* Testimonios */
+/* ==========================
+      TESTIMONIOS
+   ========================== */
+.testimonios-section { padding:4rem 0; background:var(--light-blue); }
+.testimonios-track   { display:flex; gap:1rem; animation:scroll 60s linear infinite; }
+
 .testimonios-shadow {
     box-shadow: 0 8px 32px var(--shadow-light);
     position: relative;
@@ -264,33 +278,20 @@ body {
     pointer-events: none;
 }
 
-.testimonios-track {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    animation: scroll 120s linear infinite;
-    width: max-content;
-    will-change: transform;
-}
-
 .testimonio-card {
-    flex: 0 0 350px;
-    height: 230px;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+     flex:0 0 clamp(240px, 75vw, 320px);
+    min-height:230px;            /* altura base consistente */
+    height:auto;                 /* se adapta al contenido */
+    display:flex;
+    flex-direction:column;
+    background:var(--white);
+    border-radius:.5rem;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    transition:transform .3s ease, box-shadow .3s ease;
 }
 
-.testimonio-card .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-}
+/* Contenido interno */
+.testimonio-card .card-body { flex:1; display:flex; flex-direction:column; padding:1.5rem; }
 
 .testimonio-card .card-text {
     flex: 1;
@@ -302,54 +303,63 @@ body {
     line-height: 1.4;
 }
 
-.testimonio-card .text-warning {
-    margin-bottom: 1rem;
-    flex-shrink: 0;
-}
+.testimonio-card .text-warning { margin-bottom:1rem; flex-shrink:0; }
+.testimonio-card img { width:48px; height:48px; object-fit:cover; border-radius:50%; flex-shrink:0; }
 
 .testimonio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px var(--shadow-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.testimonio-card img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
+.testimonio-card .avatar {
+    align-self: center;
+    margin-top: -1.5rem;
+    border: 4px solid var(--white);
     border-radius: 50%;
-    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
 }
 
-/* Servicios */
+.testimonio-card .content p {
+    flex: 1;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.testimonio-card .content .name {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* ==========================
+      SERVICIOS (Cards con animación)
+   ========================== */
 .card.servicio-card {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.7s forwards;
-    transition: transform 0.18s, box-shadow 0.18s;
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeInUp .7s forwards;
+    transition:transform .18s, box-shadow .18s;
 }
 
 .card.servicio-card:nth-child(1) { animation-delay: 0.1s; }
 .card.servicio-card:nth-child(2) { animation-delay: 0.2s; }
 .card.servicio-card:nth-child(3) { animation-delay: 0.3s; }
 
-.card.servicio-card:hover,
-.card.servicio-card:focus-within {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px var(--shadow-dark);
+.card.servicio-card:hover, .card.servicio-card:focus-within {
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 8px 32px var(--shadow-dark);
 }
 
 .servicio-icono {
-    background: var(--light-blue);
-    color: var(--primary-color) !important;
-    border-radius: 50%;
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 2.2rem;
-    box-shadow: 0 2px 8px var(--shadow-light);
+    background:var(--light-blue);
+    color:var(--primary-color) !important;
+    border-radius:50%;
+    width:64px; height:64px;
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 1rem;
+    font-size:2.2rem;
+    box-shadow:0 2px 8px var(--shadow-light);
 }
 
 .servicios-titulo {
@@ -378,36 +388,35 @@ body {
     box-shadow: 0 2px 8px var(--shadow-dark);
 }
 
-/* WhatsApp flotante */
+/* ==========================
+      WHATSAPP FLOAT
+   ========================== */
 .whatsapp-float {
-    position: fixed;
-    bottom: 80px;
-    right: 24px;
-    background: var(--whatsapp-green);
-    color: var(--white);
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    z-index: 9999;
-    transition: all 0.3s ease;
+    position:fixed;
+    bottom:80px; right:24px;
+    background:var(--whatsapp-green);
+    color:var(--white);
+    border-radius:50%;
+    width:56px; height:56px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:2rem;
+    box-shadow:0 4px 16px rgba(0,0,0,.15);
+    z-index:9999;
+    transition:all .3s ease;
 }
 
-.whatsapp-float:hover {
-    background: var(--whatsapp-hover);
-    transform: scale(1.1);
+.whatsapp-float:hover { background:var(--whatsapp-hover); transform:scale(1.05); }
+@supports (padding:env(safe-area-inset-bottom)) {
+    .whatsapp-float { bottom:calc(80px + env(safe-area-inset-bottom)); }
 }
 
-/* Footer */
-.footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1.5rem 0;
-    text-align: center;
+/* ==========================
+      FOOTER
+   ========================== */
+footer {
+    background:var(--secondary-color);
+    color:var(--white);
+    padding:2rem 0;
 }
 
 .footer p {
@@ -415,14 +424,9 @@ body {
     font-size: 0.9rem;
 }
 
-.footer a {
-    color: var(--light-blue);
-    text-decoration: none;
-}
+footer a { color:var(--white); text-decoration:underline; }
+footer a:hover { text-decoration:none; }
 
-.footer a:hover {
-    text-decoration: underline;
-}
 
 /* Efecto de nieve */
 #snow-canvas {
@@ -458,13 +462,10 @@ body {
     opacity: 0.5;
 }
 
-/* Animaciones */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* ==========================
+      ANIMATIONS & KEYFRAMES
+   ========================== */
+@keyframes fadeInUp { to { opacity:1; transform:translateY(0);} }
 
 @keyframes scroll {
     0% {
@@ -484,7 +485,10 @@ body {
     }
 }
 
-/* ===== Media Queries ===== */
+/* ==========================
+      MEDIA QUERIES
+   ========================== */
+
 @media (max-width: 1200px) {
     .navbar-brand {
         font-size: 1.8rem;
@@ -533,8 +537,8 @@ body {
         font-size: 1.8rem;
     }
     .testimonio-card {
-        flex: 0 0 300px;
-        height: 230px;
+        flex:0 0 300px;
+        min-height:230px;
     }
     
     .navbar-brand {
@@ -559,7 +563,7 @@ body {
 @media (max-width: 576px) {
     .whatsapp-float { bottom: 60px; }
     .testimonios-shadow { padding: 1.5rem 0; }
-    .testimonio-card { flex: 0 0 280px; }
+    .testimonio-card { flex: 0 0 280px; min-height:230px;}
     .testimonio-card .card-body { padding: 1.25rem; }
     .testimonios-shadow h2 {
         font-size: 1.5rem;
@@ -597,6 +601,13 @@ body {
     .brand-parana { font-size: 0.65rem; }
     .banner-text h2 { font-size: 1.3rem; }
     .banner-text p { font-size: 0.85rem; }
-    .testimonio-card { flex: 0 0 240px; }
+    .testimonio-card { flex: 0 0 240px; min-height:230px;}
     .testimonio-card img { width: 36px; height: 36px; }
+}
+
+/* ==========================
+    REDUCED MOTION
+   ========================== */
+@media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
 }
