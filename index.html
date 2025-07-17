@@ -347,12 +347,17 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ingrese su nombre">
                         </div>
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                            <input type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Ingrese su número de teléfono">
                         </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Ingrese su correo">
+                        </div>
+                        
                         <div class="mb-3">
                             <label for="detalle" class="form-label">¿Qué necesitás?</label>
                             <textarea class="form-control" id="detalle" name="detalle" rows="3" required></textarea>
@@ -376,12 +381,19 @@
 
         const nombre = document.getElementById('nombre').value.trim();
         const telefono = document.getElementById('telefono').value.trim();
+        const email = document.getElementById('email').value.trim();
+        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            alert('❌ Por favor, ingresa un correo electrónico válido.');
+            return;
+        }
         const detalle = document.getElementById('detalle').value.trim();
 
         const templateParams = {
             nombre,
             telefono,
+            email,
             detalle
+            
         };
 
         emailjs.send('service_8au336r', 'template_presupuesto', templateParams)
