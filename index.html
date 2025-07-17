@@ -366,38 +366,37 @@
             </div>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- EmailJS -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        // Inicializar EmailJS
-        emailjs.init("public_VhvLQlOVp_hYMuBn6"); // Reemplazá con tu clave pública
+        emailjs.init('i16yg3lcRxfZhjDQl'); // tu clave pública
 
-        // Envío del formulario
-        document.getElementById('formPresupuesto').addEventListener('submit', function (e) {
-            e.preventDefault();
+    document.getElementById('formPresupuesto').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const detalle = document.getElementById('detalle').value.trim();
+        const nombre = document.getElementById('nombre').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const detalle = document.getElementById('detalle').value.trim();
 
-            const templateParams = {
-                nombre,
-                telefono,
-                detalle
-            };
+        const templateParams = {
+            nombre,
+            telefono,
+            detalle
+        };
 
-            emailjs.send('service_8au336r', 'template_presupuesto', templateParams)
-                .then(function () {
-                    alert('✅ Gracias por tu consulta. Te responderemos pronto.');
-                    const modal = bootstrap.Modal.getInstance(document.getElementById('modalPresupuesto'));
-                    modal.hide();
-                    e.target.reset();
-                }, function (error) {
-                    console.error('Error al enviar:', error);
-                    alert('❌ Hubo un error al enviar tu solicitud. Intentá más tarde.');
-                });
-        });
+        emailjs.send('service_8au336r', 'template_presupuesto', templateParams)
+            .then(() => {
+                alert('✅ Gracias por tu consulta. Te responderemos pronto.');
+                const modal = bootstrap.Modal.getInstance(document.getElementById('modalPresupuesto'));
+                modal.hide();
+                e.target.reset();
+            })
+            .catch((error) => {
+                console.error('Error al enviar:', error);
+                alert('❌ Hubo un error al enviar tu solicitud. Intentá más tarde.');
+            });
+    });
+
     </script>
 
 </html>
