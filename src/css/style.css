@@ -335,6 +335,22 @@ body {
 /* ==========================
       SERVICIOS (Cards con animación)
    ========================== */
+
+/* Agregá al final del style.css o dentro de tu bloque de servicios */
+.servicio-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.servicio-card .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .card.servicio-card {
     opacity:0;
     transform:translateY(30px);
