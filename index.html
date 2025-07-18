@@ -346,19 +346,22 @@
                             aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body p-4">
+                        <!-- Alerta visual de Bootstrap -->
+                        <div id="formAlert" class="alert d-none" role="alert"></div>
+
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
-                                required>
+                                required />
                             <label for="nombre">Nombre</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono"
-                                required>
+                                required />
                             <label for="telefono">Teléfono</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Correo electrónico" required>
+                                placeholder="Correo electrónico" required />
                             <label for="email">Correo electrónico</label>
                         </div>
                         <div class="form-floating mb-3">
@@ -377,44 +380,54 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         emailjs.init('i16yg3lcRxfZhjDQl'); // tu clave pública
 
-        document.getElementById('formPresupuesto').addEventListener('submit', function (e) {
+        const form = document.getElementById('formPresupuesto');
+        const formAlert = document.getElementById('formAlert');
+
+        function mostrarMensaje(tipo, mensaje) {
+            formAlert.className = `alert alert-${tipo} mt-2`;
+            formAlert.textContent = mensaje;
+            formAlert.classList.remove('d-none');
+
+            // Oculta el mensaje luego de 5 segundos (opcional)
+            setTimeout(() => formAlert.classList.add('d-none'), 5000);
+        }
+
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             const nombre = document.getElementById('nombre').value.trim();
             const telefono = document.getElementById('telefono').value.trim();
             const email = document.getElementById('email').value.trim();
-            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                alert('❌ El correo ingresado no es válido. Por favor, revísalo.');
-                return;
-            }
             const detalle = document.getElementById('detalle').value.trim();
 
-            const templateParams = {
-                nombre,
-                telefono,
-                email,
-                detalle
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                mostrarMensaje('danger', '❌ El correo ingresado no es válido. Por favor, revisalo.');
+                return;
+            }
 
-            };
+            const templateParams = { nombre, telefono, email, detalle };
 
-            emailjs.send('service_8au336r', 'template_presupuesto', templateParams)
+            emailjs
+                .send('service_8au336r', 'template_presupuesto', templateParams)
                 .then(() => {
-                    alert('✅ ¡Solicitud enviada! Gracias por comunicarte con nosotros. En breve nos pondremos en contacto para responder tu solicitud.');
-                    const modal = bootstrap.Modal.getInstance(document.getElementById('modalPresupuesto'));
-                    modal.hide();
-                    e.target.reset();
+                    mostrarMensaje('success', '✅ ¡Solicitud enviada! Gracias por comunicarte con nosotros. En breve nos pondremos en contacto para responder tu solicitud.');
+                    form.reset();
+                    // Cierra el modal después de 2.5 segundos
+                    setTimeout(() => {
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('modalPresupuesto'));
+                        modal.hide();
+                    }, 2500);
                 })
                 .catch((error) => {
                     console.error('Error al enviar:', error);
-                    alert('❌ Ocurrió un error al enviar el formulario. Por favor, volvé a intentarlo en unos minutos o comunicate por teléfono.');
+                    mostrarMensaje('danger', '❌ Ocurrió un error al enviar tu solicitud. Intentá más tarde o contactanos por teléfono.');
                 });
         });
-
     </script>
 
 </html>
