@@ -335,46 +335,68 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script type="module" src="src/js/snow.js" defer></script>
     <script type="module" src="src/js/slider-testimonios.js" defer></script>
+    <!-- Reemplazar el modal existente con este código mejorado -->
     <div class="modal fade" id="modalPresupuesto" tabindex="-1" aria-labelledby="modalPresupuestoLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content shadow-lg border-0 rounded-4">
+            <div class="modal-content shadow-lg border-0">
                 <form id="formPresupuesto">
-                    <div class="modal-header bg-primary text-white rounded-top-4">
-                        <h5 class="modal-title fw-bold" id="modalPresupuestoLabel">Solicitá tu presupuesto</h5>
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title fw-bold" id="modalPresupuestoLabel">
+                            <i class="bi bi-file-earmark-text me-2"></i>Solicitá tu presupuesto
+                        </h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                             aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body p-4">
-                        <!-- Alerta visual de Bootstrap -->
+                        <!-- Alerta mejorada -->
                         <div id="formAlert" class="alert d-none" role="alert"></div>
 
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
                                 required />
-                            <label for="nombre">Nombre</label>
+                            <label for="nombre"><i class="bi bi-person-fill me-2"></i>Nombre completo</label>
+                            <div class="invalid-feedback">Por favor ingrese su nombre</div>
                         </div>
+
                         <div class="form-floating mb-3">
                             <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono"
                                 required />
-                            <label for="telefono">Teléfono</label>
+                            <label for="telefono"><i class="bi bi-telephone-fill me-2"></i>Teléfono</label>
+                            <div class="invalid-feedback">Por favor ingrese un teléfono válido</div>
                         </div>
+
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="email" name="email"
                                 placeholder="Correo electrónico" required />
-                            <label for="email">Correo electrónico</label>
+                            <label for="email"><i class="bi bi-envelope-fill me-2"></i>Correo electrónico</label>
+                            <div class="invalid-feedback">Por favor ingrese un email válido</div>
                         </div>
+
                         <div class="form-floating mb-3">
                             <textarea class="form-control" placeholder="Detalle" id="detalle" name="detalle"
                                 style="height: 120px" required></textarea>
-                            <label for="detalle">¿En qué podemos ayudarte?</label>
+                            <label for="detalle"><i class="bi bi-chat-left-text-fill me-2"></i>¿En qué podemos
+                                ayudarte?</label>
+                            <div class="invalid-feedback">Por favor describa su consulta</div>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="privacidad" required>
+                            <label class="form-check-label small" for="privacidad">
+                                Acepto la política de privacidad y el tratamiento de mis datos
+                            </label>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between px-4 pb-4">
-                        <button type="submit"
-                            class="btn btn-primary px-4 py-2 rounded-pill fw-semibold shadow-sm">Enviar</button>
-                        <button type="button" class="btn btn-outline-secondary rounded-pill px-4 py-2"
-                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary px-4 py-2 fw-semibold shadow-sm">
+                            <span class="spinner-border spinner-border-sm d-none" role="status"
+                                aria-hidden="true"></span>
+                            Enviar solicitud
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary px-4 py-2" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
                     </div>
                 </form>
             </div>
@@ -382,51 +404,124 @@
     </div>
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    // Reemplazar el script existente del modal con este mejorado
     <script>
-        emailjs.init('i16yg3lcRxfZhjDQl'); // tu clave pública
+        emailjs.init('i16yg3lcRxfZhjDQl');
 
-        const form = document.getElementById('formPresupuesto');
-        const formAlert = document.getElementById('formAlert');
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('formPresupuesto');
+            const formAlert = document.getElementById('formAlert');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const spinner = document.createElement('div');
+            spinner.className = 'loading-spinner';
 
-        function mostrarMensaje(tipo, mensaje) {
-            formAlert.className = `alert alert-${tipo} mt-2`;
-            formAlert.textContent = mensaje;
-            formAlert.classList.remove('d-none');
+            // Configurar spinner
+            submitBtn.insertAdjacentElement('afterbegin', spinner);
+            submitBtn.style.position = 'relative';
+            submitBtn.style.minHeight = '38px';
 
-            // Oculta el mensaje luego de 5 segundos (opcional)
-            setTimeout(() => formAlert.classList.add('d-none'), 5000);
-        }
+            function mostrarMensaje(tipo, mensaje) {
+                formAlert.className = `alert alert-${tipo} mt-2`;
+                formAlert.innerHTML = `
+                <div class="d-flex align-items-center">
+                    <i class="bi ${tipo === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-2"></i>
+                    <span>${mensaje}</span>
+                </div>
+            `;
+                formAlert.classList.remove('d-none');
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
+                // Scroll al mensaje si está fuera de vista
+                formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const detalle = document.getElementById('detalle').value.trim();
-
-            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                mostrarMensaje('danger', '❌ El correo ingresado no es válido. Por favor, revisalo.');
-                return;
-            }
-
-            const templateParams = { nombre, telefono, email, detalle };
-
-            emailjs
-                .send('service_8au336r', 'template_presupuesto', templateParams)
-                .then(() => {
-                    mostrarMensaje('success', '✅ ¡Solicitud enviada! Gracias por comunicarte con nosotros. En breve nos pondremos en contacto para responder tu solicitud.');
-                    form.reset();
-                    // Cierra el modal después de 2.5 segundos
+                // Oculta el mensaje luego de 5 segundos
+                if (tipo === 'success') {
                     setTimeout(() => {
+                        formAlert.classList.add('d-none');
                         const modal = bootstrap.Modal.getInstance(document.getElementById('modalPresupuesto'));
                         modal.hide();
-                    }, 2500);
-                })
-                .catch((error) => {
-                    console.error('Error al enviar:', error);
-                    mostrarMensaje('danger', '❌ Ocurrió un error al enviar tu solicitud. Intentá más tarde o contactanos por teléfono.');
-                });
+                    }, 3000);
+                } else {
+                    setTimeout(() => formAlert.classList.add('d-none'), 5000);
+                }
+            }
+
+            // Validación en tiempo real
+            form.addEventListener('input', function (e) {
+                if (e.target.id === 'email' && e.target.value.trim() !== '') {
+                    if (!e.target.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                        e.target.classList.add('is-invalid');
+                    } else {
+                        e.target.classList.remove('is-invalid');
+                    }
+                }
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Mostrar spinner y deshabilitar botón
+                spinner.style.display = 'block';
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Enviando...';
+                submitBtn.insertAdjacentElement('afterbegin', spinner);
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const detalle = document.getElementById('detalle').value.trim();
+
+                // Validación adicional
+                if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                    mostrarMensaje('danger', '❌ El correo ingresado no es válido. Por favor, revisalo.');
+                    spinner.style.display = 'none';
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Enviar';
+                    return;
+                }
+
+                const templateParams = {
+                    nombre,
+                    telefono,
+                    email,
+                    detalle,
+                    fecha: new Date().toLocaleString('es-AR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+
+                emailjs.send('service_8au336r', 'template_presupuesto', templateParams)
+                    .then(() => {
+                        mostrarMensaje('success', '✅ ¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.');
+                        form.reset();
+
+                        // Enviar evento a Google Analytics (si está configurado)
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'form_submit', {
+                                'event_category': 'contact',
+                                'event_label': 'presupuesto_form'
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error al enviar:', error);
+                        mostrarMensaje('danger', '❌ Hubo un error al enviar tu solicitud. Por favor, intentá nuevamente o contactanos por teléfono.');
+                    })
+                    .finally(() => {
+                        spinner.style.display = 'none';
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = 'Enviar';
+                    });
+            });
+
+            // Resetear formulario cuando se cierra el modal
+            document.getElementById('modalPresupuesto').addEventListener('hidden.bs.modal', function () {
+                form.reset();
+                formAlert.classList.add('d-none');
+            });
         });
     </script>
 
