@@ -364,7 +364,7 @@
                         <div class="form-floating mb-3">
                             <textarea class="form-control" placeholder="Detalle" id="detalle" name="detalle"
                                 style="height: 120px" required></textarea>
-                            <label for="detalle">¿Qué necesitás?</label>
+                            <label for="detalle">¿En qué podemos ayudarte?</label>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between px-4 pb-4">
@@ -389,7 +389,7 @@
             const telefono = document.getElementById('telefono').value.trim();
             const email = document.getElementById('email').value.trim();
             if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                alert('❌ Por favor, ingresa un correo electrónico válido.');
+                alert('❌ El correo ingresado no es válido. Por favor, revísalo.');
                 return;
             }
             const detalle = document.getElementById('detalle').value.trim();
@@ -411,7 +411,7 @@
                 })
                 .catch((error) => {
                     console.error('Error al enviar:', error);
-                    alert('❌ Hubo un error al enviar tu solicitud. Intentá más tarde.');
+                    alert('❌ Ocurrió un error al enviar el formulario. Por favor, volvé a intentarlo en unos minutos o comunicate por teléfono.');
                 });
         });
 
