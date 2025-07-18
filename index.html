@@ -404,7 +404,7 @@
 
             emailjs.send('service_8au336r', 'template_presupuesto', templateParams)
                 .then(() => {
-                    alert('✅ ¡Solicitud enviada! Gracias por comunicarte con nosotros. Te responderemos pronto.');
+                    alert('✅ ¡Solicitud enviada! Gracias por comunicarte con nosotros. En breve nos pondremos en contacto para responder tu solicitud.');
                     const modal = bootstrap.Modal.getInstance(document.getElementById('modalPresupuesto'));
                     modal.hide();
                     e.target.reset();
