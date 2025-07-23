@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             nombre: "Roberto M.",
-            texto: "Urgencia atendida a las 2 de la mañana. Salvó todos los alimentos de mi negocio. Gracias TecnoSur!",
+            texto: "Urgencia atendida a las 11 de la noche. Salvó todos los alimentos de mi negocio. Gracias TecnoSur!",
             estrellas: 5,
             avatar: "https://randomuser.me/api/portraits/thumb/men/81.jpg"
         }
