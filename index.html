@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="mZL4iXVbADxiTYO7432IUG_dJD7hyv3CvcXd-Ie30TA" />
     <meta name="msvalidate.01" content="A131A9EE45249C7F41E4E3D0D4285812" />
-    <meta name="description" content="Servicio técnico en Paraná: reparación de aires, heladeras y lavarropas. Instalación, mantenimiento y urgencias 24/7. ¡Contacto ahora!" />
+    <meta name="description"
+        content="Servicio técnico en Paraná: reparación de aires, heladeras y lavarropas. Instalación, mantenimiento y urgencias 24/7. ¡Contacto ahora!" />
     <meta property="og:title" content="TecnoSur Paraná | Reparación de Equipos de Refrigeración" />
     <meta property="og:description"
         content="Servicio técnico especializado en refrigeración en Paraná. Urgencias 24 horas." />
@@ -211,6 +212,93 @@
         </div>
     </section>
 
+    <section class="container my-5">
+        <h2 class="text-center mb-4 text-dark position-relative">
+            <span class="position-relative px-3 bg-white z-1">Nuestros Trabajos Destacados</span>
+            <span class="position-absolute top-50 start-0 end-0 border-top border-2 border-primary z-0"></span>
+        </h2>
+
+        <div id="carouselDestacadas" class="carousel slide carousel-fade" data-bs-ride="carousel"
+            data-bs-interval="5000">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselDestacadas" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselDestacadas" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselDestacadas" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselDestacadas" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+
+            <div class="carousel-inner rounded-3 shadow-lg overflow-hidden">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="ratio ratio-16x9">
+                        <img src="src/img/aires_colocados.webp" class="d-block w-100"
+                            alt="Instalación de aires acondicionados en comercios - TecnoSur Paraná" loading="lazy">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
+                        <h5 class="fw-bold">Climatización Comercial</h5>
+                        <!-- Cambiado de "Refrigeración" a "Climatización" -->
+                        <p class="mb-0">Instalación profesional de aires acondicionados para locales</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="ratio ratio-16x9">
+                        <img src="src/img/elevador.webp" class="d-block w-100" alt="Reparación industrial"
+                            loading="lazy">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
+                        <h5 class="fw-bold">Instalación de Alta Precisión</h5>
+                        <p class="mb-0">Trabajos en altura con seguridad garantizada</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="ratio ratio-16x9">
+                        <img src="src/img/camara_frigorifica.webp" class="d-block w-100"
+                            alt="Instalación de cámara frigorífica profesional en Paraná" loading="lazy">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
+                        <h5 class="fw-bold">Cámaras Frigoríficas Industriales</h5>
+                        <p class="mb-0">Diseño e instalación personalizada para óptima conservación</p>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-item">
+                    <div class="ratio ratio-16x9">
+                        <img src="src/img/heladeras_comerciales.webp" class="d-block w-100"
+                            alt="Heladeras exhibidoras para negocios - Servicio técnico especializado" loading="lazy">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
+                        <h5 class="fw-bold">Equipos Comerciales</h5> <!-- Título más específico -->
+                        <p class="mb-0">Mantenimiento de heladeras y freezers para negocios</p>
+                        <!-- Enfocado en mantenimiento -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacadas"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacadas"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+
+        <div class="text-center mt-3">
+            <small class="text-muted">Desliza para ver más trabajos destacados</small>
+        </div>
+    </section>
     <section class="container-fluid py-5 testimonios-shadow">
         <h2 class="text-center mb-4 text-dark">Testimonios de nuestros clientes</h2>
         <div class="container-fluid px-0">
@@ -403,7 +491,7 @@
     </div>
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    // Reemplazar el script existente del modal con este mejorado
+
     <script>
         emailjs.init('i16yg3lcRxfZhjDQl');
 
