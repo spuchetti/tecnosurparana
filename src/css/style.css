@@ -678,7 +678,7 @@ main {
     box-shadow: 0 2px 8px var(--shadow-dark);
 }
 
-/* NUEVO BOTÓN "LLAMANOS AHORA" MEJORADO */
+/* BOTÓN "LLAMANOS AHORA" MEJORADO */
 .custom-btn-outline {
     border: 2px solid var(--primary-color) !important;
     color: var(--primary-color) !important;
@@ -717,6 +717,7 @@ main {
 .custom-btn-outline i.bi {
     font-size: 1.2em;
     transition: transform 0.3s ease;
+    margin-right: 0.5rem;
 }
 
 .custom-btn-outline:hover i.bi {
@@ -740,6 +741,11 @@ main {
 
 .custom-btn-outline:focus:not(:active)::after {
     animation: ripple 0.6s ease-out;
+}
+
+/* Contenedor de botones */
+.d-flex.flex-column.flex-sm-row.gap-3 {
+    gap: 1rem;
 }
 
 .btn-close {
@@ -1253,8 +1259,27 @@ footer > .container > * {
 
     /* Ajustes para botones en móviles */
     .custom-btn-outline {
-        padding: 0.6rem 1.2rem;
+        padding: 0.6rem 1rem;
         font-size: 0.95rem;
+        white-space: nowrap;
+    }
+    
+    .custom-btn-outline i.bi {
+        font-size: 1em;
+        margin-right: 0.5rem;
+    }
+    
+    /* Contenedor de botones en móviles */
+    .d-flex.flex-column.flex-sm-row.gap-3 {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    
+    .custom-btn-fixed,
+    .custom-btn-outline {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
     }
 }
 
@@ -1299,8 +1324,12 @@ footer > .container > * {
 
     /* Ajustes para botones en móviles pequeños */
     .custom-btn-outline {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
+    }
+    
+    .custom-btn-outline i.bi {
+        font-size: 0.9em;
     }
 }
 
@@ -1315,6 +1344,16 @@ footer > .container > * {
     .testimonio-card { flex: 0 0 260px; }
     .testimonio-card .card-body { padding: 1rem; }
     .testimonio-card img { width: 40px; height: 40px; }
+    
+    /* Ajustes adicionales para botones en móviles muy pequeños */
+    .custom-btn-outline {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .custom-btn-outline i.bi {
+        margin-right: 0.3rem;
+    }
 }
 
 @media (max-width: 360px) {
