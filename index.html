@@ -27,7 +27,8 @@
     <link rel="preload" href="src/img/hogar.webp" as="image"
         imagesrcset="src/img/hogar-400.webp 400w, src/img/hogar-800.webp 800w"
         imagesizes="(max-width: 600px) 400px, 800px" />
-    <link rel="preload" href="src/css/style.css" as="style" />
+    <link rel="preload" href="src/css/home.css" as="style" />
+    <link rel="preload" href="src/css/common.css" as="style" />
 
     <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -60,14 +61,16 @@
         onload="this.media='all'" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"
         media="print" onload="this.media='all'" />
-    <link href="src/css/style.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="src/css/common.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="src/css/home.css" rel="stylesheet" media="print" onload="this.media='all'" />
 
     <!-- Fallback sin JS -->
     <noscript>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
             rel="stylesheet" />
-        <link href="src/css/style.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="src/css/common.css" rel="stylesheet" />
+        <link href="src/css/home.css" rel="stylesheet" />
     </noscript>
 
     <!-- Schema.org markup -->
@@ -160,8 +163,7 @@
                     rápidamente para brindarte la mejor solución.
                 </p>
                 <div class="d-flex flex-column flex-sm-row gap-3">
-                    <button class="btn btn-lg fw-bold custom-btn-fixed" data-bs-toggle="modal"
-                        data-bs-target="#modalPresupuesto">
+                    <button class="btn btn-lg fw-bold custom-btn-fixed" id="btnPresupuesto">
                         Solicitá tu presupuesto
                     </button>
                     <a href="tel:+54343154572088" class="btn btn-lg fw-bold custom-btn-outline">
@@ -322,7 +324,7 @@
         </div>
     </div>
 
-    <section class="container my-5">
+    <section id="preguntas-frecuentes" class="container my-5">
         <h2 class="text-center mb-4 text-dark">Preguntas Frecuentes</h2>
         <div class="accordion" id="faqAccordion">
             <div class="accordion-item">
@@ -433,8 +435,7 @@
                         <li class="mb-2"><a href="contacto.html" class="text-white text-decoration-none">Contacto</a>
                         </li>
                         <li class="mb-2"><a href="#" class="text-white text-decoration-none">Servicios</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Trabajos</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                        <li><a href="#preguntas-frecuentes" class="text-white text-decoration-none">FAQ</a></li>
                     </ul>
                 </div>
 
@@ -478,7 +479,7 @@
                     </ul>
 
                     <div class="mt-4">
-                        <a href="#modalPresupuesto" class="btn btn-primary btn-sm" data-bs-toggle="modal">
+                        <a href="#" class="btn btn-primary btn-sm" id="btnPresupuestoFooter">
                             <i class="bi bi-envelope me-1"></i> Contactar
                         </a>
                     </div>
@@ -502,202 +503,30 @@
         </div>
     </footer>
 
-    <!-- Scripts al final con defer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <script type="module" src="src/js/snow.js" defer></script>
     <script type="module" src="src/js/slider-testimonios.js" defer></script>
-    <!-- Reemplazar el modal existente con este código mejorado -->
-    <div class="modal fade" id="modalPresupuesto" tabindex="-1" aria-labelledby="modalPresupuestoLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content shadow-lg border-0">
-                <form id="formPresupuesto">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title fw-bold" id="modalPresupuestoLabel">
-                            <i class="bi bi-file-earmark-text me-2"></i>Solicitá tu presupuesto
-                        </h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Cerrar"></button>
-                    </div>
-                    <div class="modal-body p-4">
-                        <!-- Alerta mejorada -->
-                        <div id="formAlert" class="alert d-none" role="alert"></div>
 
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
-                                required />
-                            <label for="nombre"><i class="bi bi-person-fill me-2"></i>Nombre completo</label>
-                            <div class="invalid-feedback">Por favor ingrese su nombre</div>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono"
-                                required />
-                            <label for="telefono"><i class="bi bi-telephone-fill me-2"></i>Teléfono</label>
-                            <div class="invalid-feedback">Por favor ingrese un teléfono válido</div>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Correo electrónico" required />
-                            <label for="email"><i class="bi bi-envelope-fill me-2"></i>Correo electrónico</label>
-                            <div class="invalid-feedback">Por favor ingrese un email válido</div>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" placeholder="Detalle" id="detalle" name="detalle"
-                                style="height: 120px" required></textarea>
-                            <label for="detalle"><i class="bi bi-chat-left-text-fill me-2"></i>¿En qué podemos
-                                ayudarte?</label>
-                            <div class="invalid-feedback">Por favor describa su consulta</div>
-                        </div>
-
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="privacidad" required>
-                            <label class="form-check-label small" for="privacidad">
-                                Acepto la política de privacidad y el tratamiento de mis datos
-                            </label>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-between px-4 pb-4">
-                        <button type="submit" class="btn btn-primary px-4 py-2 fw-semibold shadow-sm">
-                            <span class="spinner-border spinner-border-sm d-none" role="status"
-                                aria-hidden="true"></span>
-                            Enviar solicitud
-                        </button>
-                        <button type="button" class="btn btn-outline-secondary px-4 py-2" data-bs-dismiss="modal">
-                            Cancelar
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/54343154572088" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp">
         <i class="bi bi-whatsapp"></i>
     </a>
+
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
     <script>
         emailjs.init('i16yg3lcRxfZhjDQl');
+    </script>
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('formPresupuesto');
-            const formAlert = document.getElementById('formAlert');
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const spinner = document.createElement('div');
-            spinner.className = 'loading-spinner';
+    <script type="module">
+        import { initModalPresupuesto } from './src/js/components/modal-loader.js';
+        import { initFormPresupuesto } from './src/js/form-presupuesto.js';
 
-            // Configurar spinner
-            submitBtn.insertAdjacentElement('afterbegin', spinner);
-            submitBtn.style.position = 'relative';
-            submitBtn.style.minHeight = '38px';
-
-            function mostrarMensaje(tipo, mensaje) {
-                formAlert.className = `alert alert-${tipo} mt-2`;
-                formAlert.innerHTML = `
-                <div class="d-flex align-items-center">
-                    <i class="bi ${tipo === 'success' ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-2"></i>
-                    <span>${mensaje}</span>
-                </div>
-            `;
-                formAlert.classList.remove('d-none');
-
-                // Scroll al mensaje si está fuera de vista
-                formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-                // Oculta el mensaje luego de 5 segundos
-                if (tipo === 'success') {
-                    setTimeout(() => {
-                        formAlert.classList.add('d-none');
-                        const modal = bootstrap.Modal.getInstance(document.getElementById('modalPresupuesto'));
-                        modal.hide();
-                    }, 3000);
-                } else {
-                    setTimeout(() => formAlert.classList.add('d-none'), 5000);
-                }
-            }
-
-            // Validación en tiempo real
-            form.addEventListener('input', function (e) {
-                if (e.target.id === 'email' && e.target.value.trim() !== '') {
-                    if (!e.target.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                        e.target.classList.add('is-invalid');
-                    } else {
-                        e.target.classList.remove('is-invalid');
-                    }
-                }
-            });
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                // Mostrar spinner y deshabilitar botón
-                spinner.style.display = 'block';
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = 'Enviando...';
-                submitBtn.insertAdjacentElement('afterbegin', spinner);
-
-                const nombre = document.getElementById('nombre').value.trim();
-                const telefono = document.getElementById('telefono').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const detalle = document.getElementById('detalle').value.trim();
-
-                // Validación adicional
-                if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                    mostrarMensaje('danger', '❌ El correo ingresado no es válido. Por favor, revisalo.');
-                    spinner.style.display = 'none';
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Enviar';
-                    return;
-                }
-
-                const templateParams = {
-                    nombre,
-                    telefono,
-                    email,
-                    detalle,
-                    fecha: new Date().toLocaleString('es-AR', {
-                        day: '2-digit',
-                        month: '2-digit',
-                        year: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    })
-                };
-
-                emailjs.send('service_8au336r', 'template_presupuesto', templateParams)
-                    .then(() => {
-                        mostrarMensaje('success', '✅ ¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.');
-                        form.reset();
-
-                        // Enviar evento a Google Analytics (si está configurado)
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'form_submit', {
-                                'event_category': 'contact',
-                                'event_label': 'presupuesto_form'
-                            });
-                        }
-                    })
-                    .catch((error) => {
-                        console.error('Error al enviar:', error);
-                        mostrarMensaje('danger', '❌ Hubo un error al enviar tu solicitud. Por favor, intentá nuevamente o contactanos por teléfono.');
-                    })
-                    .finally(() => {
-                        spinner.style.display = 'none';
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = 'Enviar';
-                    });
-            });
-
-            // Resetear formulario cuando se cierra el modal
-            document.getElementById('modalPresupuesto').addEventListener('hidden.bs.modal', function () {
-                form.reset();
-                formAlert.classList.add('d-none');
-            });
+        // Inicializa el modal y el formulario después de que todo esté cargado
+        window.addEventListener('DOMContentLoaded', () => {
+            initModalPresupuesto();
+            initFormPresupuesto();
         });
     </script>
 </body>
