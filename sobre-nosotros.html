@@ -88,8 +88,31 @@
   "name": "Sobre TecnoSur Paraná",
   "description": "Información sobre nuestro equipo de técnicos especializados en refrigeración en Paraná",
   "publisher": {
-    "@type": "Organization",
+    "@type": "LocalBusiness",
+    "@id": "https://tecnosurparana.vercel.app/#organization",
     "name": "TecnoSur Paraná",
+    "image": "https://tecnosurparana.vercel.app/src/img/tecnico_refrigeracion.webp",
+    "description": "Instalación, reparación y mantenimiento de sistemas de refrigeración en Paraná, Entre Ríos.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Riacho Paracao 372",
+      "addressLocality": "Paraná",
+      "addressRegion": "Entre Ríos",
+      "postalCode": "E3100",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-31.7325",
+      "longitude": "-60.5286"
+    },
+    "telephone": "+54343154572088",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "$$",
+    "url": "https://tecnosurparana.vercel.app",
+    "sameAs": [
+      "https://www.instagram.com/tecnosurparana"
+    ],
     "logo": {
       "@type": "ImageObject",
       "url": "https://tecnosurparana.vercel.app/src/img/TS_32x32.png"
@@ -98,7 +121,57 @@
   "mainEntity": {
     "@type": "WebPageElement",
     "name": "Nuestra Historia",
-    "description": "Más de 10 años de experiencia en servicios de refrigeración en Paraná"
+    "description": "Más de 10 años de experiencia en servicios de refrigeración en Paraná",
+    "about": {
+      "@type": "Service",
+      "serviceType": "Reparación e instalación de equipos de refrigeración",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Refrigeración",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de aires acondicionados",
+              "description": "Servicio técnico especializado en reparación de aires acondicionados en Paraná."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de heladeras",
+              "description": "Reparación de heladeras domésticas y comerciales en Paraná."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de lavarropas",
+              "description": "Reparación de lavarropas domésticos y comerciales en Paraná."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Instalación de equipos",
+              "description": "Instalación profesional de aires acondicionados y sistemas de refrigeración."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mantenimiento preventivo",
+              "description": "Mantenimiento para prolongar la vida útil de tus equipos."
+            }
+          }
+        ]
+      }
+    }
   }
 }
 </script>
