@@ -158,20 +158,11 @@
 }
 
 .stat-icon {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    transition: transform 0.3s ease;
-    margin-bottom: 1rem;
+    color: transparent !important;
+    background: linear-gradient(135deg, #232673, #1976d2) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
 }
-
-.stat-icon .bi {
-    background: none;
-    color: var(--primary-color);
-    box-shadow: none;
-    padding: 0;
-    font-size: 2.2rem;
-}
-
 .stat-card h3 {
     font-weight: 700;
     color: var(--secondary-color);
@@ -181,6 +172,38 @@
 .stat-card p {
     color: #4a5568;
 }
+
+/* Actualiza los iconos */
+.stat-card .bi-trophy-fill {
+    background: linear-gradient(135deg, #232673, #1976d2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-card .bi-patch-check-fill {
+    background: linear-gradient(135deg, #232673, #1976d2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-card .bi-award-fill {
+    background: linear-gradient(135deg, #232673, #1976d2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-icon .bi {
+    background: none;
+    color: var(--primary-color);
+    box-shadow: none;
+    padding: 0;
+    font-size: 2.2rem;
+    display: inline-block;
+}
+
 
 /* ===== MISIÓN Y VALORES ===== */
 .mission-card,
