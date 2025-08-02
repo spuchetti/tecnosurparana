@@ -168,6 +168,7 @@ main {
     outline: none;
 }
 
+
 /* ===== FOOTER ===== */
 footer {
     background: linear-gradient(135deg, var(--secondary-color), #0d1a2b);
@@ -984,6 +985,8 @@ footer > .container > * {
 .navbar {
     margin: 0 !important;
     padding: 0.5rem 1rem !important;
+    min-height: 60px; /* Asegura altura mínima */
+    position: relative; /* Necesario para el posicionamiento del canvas */
 }
 
 /* Asegura que el contenedor del navbar ocupe todo el ancho */

@@ -1,4 +1,4 @@
-// form-presupuesto.js
+// presupuesto.js
 export function initFormPresupuesto() {
   const checkModalExists = setInterval(() => {
     const form = document.getElementById('formPresupuesto');

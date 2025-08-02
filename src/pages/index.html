@@ -11,7 +11,7 @@
     <meta property="og:title" content="TecnoSur Paraná | Reparación de Equipos de Refrigeración" />
     <meta property="og:description"
         content="Servicio técnico especializado en refrigeración en Paraná. Urgencias 24 horas." />
-    <meta property="og:image" content="https://tecnosurparana.vercel.app/src/img/hogar.png" />
+    <meta property="og:image" content="https://tecnosurparana.vercel.app/assets/img/hogar.png" />
     <meta property="og:url" content="https://tecnosurparana.vercel.app" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#0d6efd" />
@@ -24,23 +24,22 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
     <!-- Preload recursos críticos -->
-    <link rel="preload" href="src/img/hogar.webp" as="image"
-        imagesrcset="src/img/hogar-400.webp 400w, src/img/hogar-800.webp 800w"
+    <link rel="preload" href="../assets/img/hogar.webp" as="image"
+        imagesrcset="../assets/img/hogar-400.webp 400w, ../assets/img/hogar-800.webp 800w"
         imagesizes="(max-width: 600px) 400px, 800px" />
-    <link rel="preload" href="src/css/home.css" as="style" />
-    <link rel="preload" href="src/css/common.css" as="style" />
+    <link rel="preload" href="../assets/css/pages/home.css" as="style" />
+    <link rel="preload" href="../assets/css/base/common.css" as="style" />
 
     <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="src/img/TS_32x32.png" type="image/png" sizes="32x32" />
-    <link rel="icon" href="src/img/TS_16x16.png" type="image/png" sizes="16x16" />
-    <link rel="apple-touch-icon" href="src/img/apple-touch-icon.png" sizes="180x180" />
-    <meta name="msapplication-TileImage" content="src/img/mstile-150x150.png" />
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../assets/img/TS_32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="../assets/img/TS_16x16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" sizes="180x180" />
+    <meta name="msapplication-TileImage" content="../assets/img/mstile-150x150.png" />
     <meta name="msapplication-TileColor" content="#0d6efd" />
 
     <title>TecnoSur Paraná | Servicio Técnico de Refrigeración</title>
     <link rel="canonical" href="https://tecnosurparana.vercel.app/" />
-
 
     <!-- CSS crítico inline -->
     <style>
@@ -52,8 +51,6 @@
         .banner-container {
             position: relative;
         }
-
-        /* Agrega más según sea necesario */
     </style>
 
     <!-- CSS no bloqueante -->
@@ -61,136 +58,102 @@
         onload="this.media='all'" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"
         media="print" onload="this.media='all'" />
-    <link href="src/css/common.css" rel="stylesheet" media="print" onload="this.media='all'" />
-    <link href="src/css/home.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="../assets/css/base/common.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="../assets/css/pages/home.css" rel="stylesheet" media="print" onload="this.media='all'" />
 
     <!-- Fallback sin JS -->
     <noscript>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
             rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="src/css/common.css" rel="stylesheet" />
-        <link href="src/css/home.css" rel="stylesheet" />
+        <link href="../assets/css/base/common.css" rel="stylesheet" />
+        <link href="../assets/css/pages/home.css" rel="stylesheet" />
     </noscript>
 
     <!-- Schema.org markup -->
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "TecnoSur Paraná",
-  "image": "https://tecnosurparana.vercel.app/src/img/tecnico_refrigeracion.webp",
-  "description": "Instalación, reparación y mantenimiento de sistemas de refrigeración en Paraná, Entre Ríos.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Riacho Paracao 372",
-    "addressLocality": "Paraná",
-    "addressRegion": "Entre Ríos",
-    "postalCode": "E3100",
-    "addressCountry": "AR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "-31.7325",
-    "longitude": "-60.5286"
-  },
-  "telephone": "+54343154572088",
-  "openingHours": "Mo-Su 00:00-23:59",
-  "priceRange": "$$",
-  "url": "https://tecnosurparana.vercel.app",
-  "sameAs": [
-    "https://www.instagram.com/tecnosurparana"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Servicios de Refrigeración",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Reparación de aires acondicionados",
-          "description": "Servicio técnico especializado en reparación de aires acondicionados en Paraná."
-        }
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TecnoSur Paraná",
+      "image": "https://tecnosurparana.vercel.app/src/assets/img/tecnico_refrigeracion.webp",
+      "description": "Instalación, reparación y mantenimiento de sistemas de refrigeración en Paraná, Entre Ríos.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Riacho Paracao 372",
+        "addressLocality": "Paraná",
+        "addressRegion": "Entre Ríos",
+        "postalCode": "E3100",
+        "addressCountry": "AR"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Reparación de heladeras",
-          "description": "Reparación de heladeras domésticas y comerciales en Paraná."
-        },
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Reparación de lavarropas",
-          "description": "Reparación de lavarropas domésticos y comerciales en Paraná."
-        }
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-31.7325",
+        "longitude": "-60.5286"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Instalación de equipos",
-          "description": "Instalación profesional de aires acondicionados y sistemas de refrigeración."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Mantenimiento preventivo",
-          "description": "Mantenimiento para prolongar la vida útil de tus equipos."
-        }
+      "telephone": "+54343154572088",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "priceRange": "$$",
+      "url": "https://tecnosurparana.vercel.app",
+      "sameAs": [
+        "https://www.instagram.com/tecnosurparana"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Refrigeración",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de aires acondicionados",
+              "description": "Servicio técnico especializado en reparación de aires acondicionados en Paraná."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de heladeras",
+              "description": "Reparación de heladeras domésticas y comerciales en Paraná."
+            },
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Reparación de lavarropas",
+              "description": "Reparación de lavarropas domésticos y comerciales en Paraná."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Instalación de equipos",
+              "description": "Instalación profesional de aires acondicionados y sistemas de refrigeración."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mantenimiento preventivo",
+              "description": "Mantenimiento para prolongar la vida útil de tus equipos."
+            }
+          }
+        ]
       }
-    ]
-  }
-}
-</script>
+    }
+    </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-primary navbar-expand-md position-relative overflow-hidden">
-        <canvas id="snow-canvas"
-            style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
-        <div class="container position-relative" style="z-index:3;">
-            <a class="navbar-brand" href="index.html">
-                <img src="src/img/penguin.webp" alt="Pingüino"
-                    style="height: 2rem; vertical-align: middle; margin-right: 0.5em;">
-                <span class="brand-nombre">
-                    <span class="brand-tecno">Tecno</span>
-                    <span class="brand-sur">Sur</span>
-                    <span class="brand-parana">Paraná</span>
-                </span>
-            </a>
-
-            <!-- Botón Hamburguesa -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Menú colapsable -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active px-3" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="sobre-nosotros.html">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="contacto.html">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar se inserta acá -->
+    <div id="navbar-container"></div>
 
     <div class="banner-container">
-        <img src="src/img/hogar.webp" srcset="src/img/hogar-400.webp 400w, src/img/hogar-800.webp 800w"
-            sizes="(max-width: 600px) 400px, 800px" alt="Banner TecnoSur Paraná" class="img-fluid w-100"
-            fetchpriority="high" loading="eager" width="800" height="450" />
+    <img src="../assets/img/hogar.webp" srcset="../assets/img/hogar-400.webp 400w, ../assets/img/hogar-800.webp 800w"
+        sizes="(max-width: 600px) 400px, 800px" alt="Banner TecnoSur Paraná" class="img-fluid w-100"
+        fetchpriority="high" loading="eager" width="800" height="450" />
         <div class="banner-text">
             <h2 class="display-4 fw-bold">Expertos en Refrigeración</h2>
             <p class="lead">Soluciones integrales para tu hogar y negocio</p>
@@ -217,7 +180,7 @@
             </div>
             <div class="col-md-6 text-center">
                 <div class="main-img-container">
-                    <img src="src/img/tecnico_refrigeracion.webp" alt="Técnico reparando aire acondicionado en Paraná"
+                    <img src="../assets/img/tecnico_refrigeracion.webp" alt="Técnico reparando aire acondicionado en Paraná"
                         class="img-fluid rounded shadow-lg" loading="lazy" />
                 </div>
             </div>
@@ -284,7 +247,7 @@
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="ratio ratio-16x9">
-                        <img src="src/img/aires_colocados.webp" class="d-block w-100"
+                        <img src="../assets/img/aires_colocados.webp" class="d-block w-100"
                             alt="Instalación de aires acondicionados en comercios - TecnoSur Paraná" loading="lazy">
                     </div>
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
@@ -296,7 +259,7 @@
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                        <img src="src/img/elevador.webp" class="d-block w-100" alt="Reparación industrial"
+                        <img src="../assets/img/elevador.webp" class="d-block w-100" alt="Reparación industrial"
                             loading="lazy">
                     </div>
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
@@ -307,7 +270,7 @@
                 <!-- Slide 3 -->
                 <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                        <img src="src/img/camara_frigorifica.webp" class="d-block w-100"
+                        <img src="../assets/img/camara_frigorifica.webp" class="d-block w-100"
                             alt="Instalación de cámara frigorífica profesional en Paraná" loading="lazy">
                     </div>
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
@@ -318,7 +281,7 @@
                 <!-- Slide 4 -->
                 <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                        <img src="src/img/heladeras_comerciales.webp" class="d-block w-100"
+                        <img src="../assets/img/heladeras_comerciales.webp" class="d-block w-100"
                             alt="Heladeras exhibidoras para negocios - Servicio técnico especializado" loading="lazy">
                     </div>
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
@@ -431,129 +394,17 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row g-4">
-                <!-- Columna de Contacto -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-brand mb-3">
-                        <img src="src/img/penguin.webp" alt="TecnoSur Paraná" class="me-2" style="height: 2rem;">
-                        <span class="h5 fw-bold">
-                            <span class="text-white">Tecno</span>
-                            <span class="text-primary">Sur</span>
-                            <span class="text-info">Paraná</span>
-                        </span>
-                    </div>
-                    <p class="text-muted">Servicio técnico especializado en reparación, instalación y mantenimiento de aires acondicionados, heladeras y lavarropas.</p>
-                    <h5 class="mt-4 mb-3">Contacto</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">
-                            <i class="bi bi-geo-alt-fill text-primary me-2"></i>
-                            Riacho Paracao 372, E3100 Paraná, Entre Ríos
-                        </li>
-                        <li class="mb-2">
-                            <i class="bi bi-telephone-fill text-primary me-2"></i>
-                            <a href="tel:+54343154572088" class="text-white text-decoration-none">0343 15-457-2088</a>
-                        </li>
-                        <li class="mb-2">
-                            <i class="bi bi-envelope-fill text-primary me-2"></i>
-                            <a href="mailto:tecnosurparana@gmail.com"
-                                class="text-white text-decoration-none">tecnosurparana@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="bi bi-clock-fill text-primary me-2"></i>
-                            <span class="badge bg-success">Abierto 24/7</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Columna de Enlaces Rápidos -->
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-3">Enlaces</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
-                        <li class="mb-2"><a href="sobre-nosotros.html"
-                                class="text-white text-decoration-none">Nosotros</a></li>
-                        <li class="mb-2"><a href="contacto.html" class="text-white text-decoration-none">Contacto</a>
-                        </li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Servicios</a></li>
-                        <li><a href="#preguntas-frecuentes" class="text-white text-decoration-none">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <!-- Columna de Servicios -->
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Servicios</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i> Reparación y Mantenimiento
-                            de Aires, Heladeras y Lavarropas</li>
-                        <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i> Instalación Profesional
-                        </li>
-                        <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i> Urgencias 24/7</li>
-                        <li><i class="bi bi-check-circle text-primary me-2"></i> Asesoramiento Técnico</li>
-                    </ul>
-                </div>
-
-                <!-- Columna de Redes Sociales -->
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3">Seguinos</h5>
-                    <div class="social-icons mb-4">
-                        <a href="https://www.instagram.com/tecnosurparana"
-                            class="btn btn-outline-light btn-sm rounded-circle me-2" target="_blank" rel="noopener">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle me-2">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="https://wa.me/54343154572088" class="btn btn-outline-light btn-sm rounded-circle me-2"
-                            target="_blank" rel="noopener">
-                            <i class="bi bi-whatsapp"></i>
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
-                            <i class="bi bi-youtube"></i>
-                        </a>
-                    </div>
-
-                    <h5 class="mb-3">Horario de Atención</h5>
-                    <ul class="list-unstyled text-muted small">
-                        <li class="mb-1">Lunes a Viernes: 8:00 - 23:00</li>
-                        <li>Sábados: 8:00 - 23:00</li>
-                    </ul>
-
-                    <div class="mt-4">
-                        <a href="#" class="btn btn-primary btn-sm" id="btnPresupuestoFooter">
-                            <i class="bi bi-envelope me-1"></i> Contactar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="my-4 border-secondary">
-
-            <div class="row">
-                <!-- En la sección de copyright -->
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <small class="text-white">&copy; 2025 TecnoSur Paraná. Todos los derechos reservados.</small>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <small class="text-white">
-                        <a href="#" class="text-decoration-none text-white me-3">Política de Privacidad</a>
-                        <a href="#" class="text-decoration-none text-white">Términos de Servicio</a>
-                    </small>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script type="module" src="src/js/snow.js" defer></script>
-    <script type="module" src="src/js/slider-testimonios.js" defer></script>
+    <!-- Footer será insertado aquí por el componente -->
+    <div id="footer-container"></div>
 
     <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/54343154572088" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp">
         <i class="bi bi-whatsapp"></i>
     </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="../js/components/slider-testimonios.js" defer></script>
 
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -562,13 +413,19 @@
     </script>
 
     <script type="module">
-        import { initModalPresupuesto } from './src/js/components/modal-loader.js';
-        import { initFormPresupuesto } from './src/js/form-presupuesto.js';
+        import { ComponentLoader } from '../js/core/components.js';
+        import { ModalPresupuesto } from '../js/modals/presupuesto.js';
+        import { initializeSnowfall } from '../js/components/utils/snow.js';
 
-        // Inicializa el modal y el formulario después de que todo esté cargado
-        window.addEventListener('DOMContentLoaded', () => {
-            initModalPresupuesto();
-            initFormPresupuesto();
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loader = new ComponentLoader();
+            await loader.loadAllComponents();
+
+            // Inicializar el modal de presupuesto
+            const modalPresupuesto = new ModalPresupuesto();
+
+            // Inicializar la nieve después de que los componentes estén listos
+            initializeSnowfall();
         });
     </script>
 </body>
