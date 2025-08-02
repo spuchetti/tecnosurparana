@@ -8,11 +8,11 @@ export class ComponentLoader {
         if (this.loadedComponents.has(componentName)) return;
 
         try {
-            // Corregimos la ruta para que funcione desde src/pages/index.html
-            const response = await fetch(`../partials/${componentName}.html`);
+            // Usar ruta relativa a public/index.html
+            const response = await fetch(`./src/partials/${componentName}.html`);
             if (!response.ok) throw new Error(`Error loading ${componentName}`);
             const html = await response.text();
-            
+
             const target = document.querySelector(targetElement);
             if (target) {
                 target.insertAdjacentHTML(position, html);

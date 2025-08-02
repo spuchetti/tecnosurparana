@@ -11,7 +11,7 @@
     <meta property="og:title" content="TecnoSur Paraná | Reparación de Equipos de Refrigeración" />
     <meta property="og:description"
         content="Servicio técnico especializado en refrigeración en Paraná. Urgencias 24 horas." />
-    <meta property="og:image" content="https://tecnosurparana.vercel.app/assets/img/hogar.png" />
+    <meta property="og:image" content="https://tecnosurparana.vercel.app/public/src/assets/img/hogar.png" />
     <meta property="og:url" content="https://tecnosurparana.vercel.app" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#0d6efd" />
@@ -24,18 +24,18 @@
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
     <!-- Preload recursos críticos -->
-    <link rel="preload" href="../assets/img/hogar.webp" as="image"
-        imagesrcset="../assets/img/hogar-400.webp 400w, ../assets/img/hogar-800.webp 800w"
+    <link rel="preload" href="assets/img/hogar.webp" as="image"
+        imagesrcset="assets/img/hogar-400.webp 400w, assets/img/hogar-800.webp 800w"
         imagesizes="(max-width: 600px) 400px, 800px" />
-    <link rel="preload" href="../assets/css/pages/home.css" as="style" />
-    <link rel="preload" href="../assets/css/base/common.css" as="style" />
+    <link rel="preload" href="./src/assets/css/pages/home.css" as="style" />
+    <link rel="preload" href="./src/assets/css/base/common.css" as="style" />
 
     <!-- Favicons -->
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="../assets/img/TS_32x32.png" type="image/png" sizes="32x32" />
-    <link rel="icon" href="../assets/img/TS_16x16.png" type="image/png" sizes="16x16" />
-    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" sizes="180x180" />
-    <meta name="msapplication-TileImage" content="../assets/img/mstile-150x150.png" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./src/assets/img/TS_32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="./src/assets/img/TS_16x16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="./src/assets/img/apple-touch-icon.png" sizes="180x180" />
+    <meta name="msapplication-TileImage" content="./src/assets/img/mstile-150x150.png" />
     <meta name="msapplication-TileColor" content="#0d6efd" />
 
     <title>TecnoSur Paraná | Servicio Técnico de Refrigeración</title>
@@ -58,16 +58,16 @@
         onload="this.media='all'" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"
         media="print" onload="this.media='all'" />
-    <link href="../assets/css/base/common.css" rel="stylesheet" media="print" onload="this.media='all'" />
-    <link href="../assets/css/pages/home.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="./src/assets/css/base/common.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="./src/assets/css/pages/home.css" rel="stylesheet" media="print" onload="this.media='all'" />
 
     <!-- Fallback sin JS -->
     <noscript>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
             rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="../assets/css/base/common.css" rel="stylesheet" />
-        <link href="../assets/css/pages/home.css" rel="stylesheet" />
+        <link href="./src/assets/css/base/common.css" rel="stylesheet" />
+        <link href="./src/assets/css/pages/home.css" rel="stylesheet" />
     </noscript>
 
     <!-- Schema.org markup -->
@@ -76,7 +76,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "TecnoSur Paraná",
-      "image": "https://tecnosurparana.vercel.app/src/assets/img/tecnico_refrigeracion.webp",
+      "image": "https://tecnosurparana.vercel.app/public/src/assets/img/tecnico_refrigeracion.webp",
       "description": "Instalación, reparación y mantenimiento de sistemas de refrigeración en Paraná, Entre Ríos.",
       "address": {
         "@type": "PostalAddress",
@@ -151,9 +151,10 @@
     <div id="navbar-container"></div>
 
     <div class="banner-container">
-    <img src="../assets/img/hogar.webp" srcset="../assets/img/hogar-400.webp 400w, ../assets/img/hogar-800.webp 800w"
-        sizes="(max-width: 600px) 400px, 800px" alt="Banner TecnoSur Paraná" class="img-fluid w-100"
-        fetchpriority="high" loading="eager" width="800" height="450" />
+        <img src="src/assets/img/hogar.webp"
+            srcset="src/assets/img/hogar-400.webp 400w, src/assets/img/hogar-800.webp 800w"
+            sizes="(max-width: 600px) 400px, 800px" alt="Banner TecnoSur Paraná" class="img-fluid w-100"
+            fetchpriority="high" loading="eager" width="800" height="450" />
         <div class="banner-text">
             <h2 class="display-4 fw-bold">Expertos en Refrigeración</h2>
             <p class="lead">Soluciones integrales para tu hogar y negocio</p>
@@ -180,8 +181,9 @@
             </div>
             <div class="col-md-6 text-center">
                 <div class="main-img-container">
-                    <img src="../assets/img/tecnico_refrigeracion.webp" alt="Técnico reparando aire acondicionado en Paraná"
-                        class="img-fluid rounded shadow-lg" loading="lazy" />
+                    <img src="src/assets/img/tecnico_refrigeracion.webp"
+                        alt="Técnico reparando aire acondicionado en Paraná" class="img-fluid rounded shadow-lg"
+                        loading="lazy" />
                 </div>
             </div>
         </div>
@@ -247,7 +249,7 @@
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="ratio ratio-16x9">
-                        <img src="../assets/img/aires_colocados.webp" class="d-block w-100"
+                        <img src="src/assets/img/aires_colocados.webp" class="d-block w-100"
                             alt="Instalación de aires acondicionados en comercios - TecnoSur Paraná" loading="lazy">
                     </div>
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
@@ -259,7 +261,7 @@
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                        <img src="../assets/img/elevador.webp" class="d-block w-100" alt="Reparación industrial"
+                        <img src="src/assets/img/elevador.webp" class="d-block w-100" alt="Reparación industrial"
                             loading="lazy">
                     </div>
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
@@ -270,7 +272,7 @@
                 <!-- Slide 3 -->
                 <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                        <img src="../assets/img/camara_frigorifica.webp" class="d-block w-100"
+                        <img src="src/assets/img/camara_frigorifica.webp" class="d-block w-100"
                             alt="Instalación de cámara frigorífica profesional en Paraná" loading="lazy">
                     </div>
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
@@ -281,7 +283,7 @@
                 <!-- Slide 4 -->
                 <div class="carousel-item">
                     <div class="ratio ratio-16x9">
-                        <img src="../assets/img/heladeras_comerciales.webp" class="d-block w-100"
+                        <img src="src/assets/img/heladeras_comerciales.webp" class="d-block w-100"
                             alt="Heladeras exhibidoras para negocios - Servicio técnico especializado" loading="lazy">
                     </div>
                     <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3 text-start">
@@ -404,7 +406,7 @@
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script type="module" src="../js/components/slider-testimonios.js" defer></script>
+    <script type="module" src="src/js/components/slider-testimonios.js" defer></script>
 
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -413,9 +415,9 @@
     </script>
 
     <script type="module">
-        import { ComponentLoader } from '../js/core/components.js';
-        import { ModalPresupuesto } from '../js/modals/presupuesto.js';
-        import { initializeSnowfall } from '../js/components/utils/snow.js';
+        import { ComponentLoader } from './src/js/core/components.js';
+        import { ModalPresupuesto } from './src/js/modals/presupuesto.js';
+        import { initializeSnowfall } from './src/js/components/utils/snow.js';
 
         document.addEventListener('DOMContentLoaded', async () => {
             const loader = new ComponentLoader();

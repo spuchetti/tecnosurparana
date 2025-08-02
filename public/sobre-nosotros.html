@@ -9,19 +9,19 @@
     <meta property="og:title" content="TecnoSur Paraná | Nuestro Equipo de Expertos en Refrigeración" />
     <meta property="og:description"
         content="Más de 10 años brindando servicio técnico especializado en refrigeración en Paraná. Conoce nuestra historia, valores y equipo profesional." />
-    <meta property="og:image" content="https://tecnosurparana.vercel.app/assets/img/equipo-tecnico.webp" />
+    <meta property="og:image" content="https://tecnosurparana.vercel.app/src/assets/img/equipo-tecnico.webp" />
 
     <meta property="og:url" content="https://tecnosurparana.vercel.app/sobre-nosotros.html" />
     <meta property="og:type" content="website" />
 
     <!-- Preconexiones y recursos críticos -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="preload" href="../assets/css/base/common.css" as="style" />
-    <link rel="preload" href="../assets/css/pages/about.css" as="style" />
+    <link rel="preload" href="./src/assets/css/base/common.css" as="style" />
+    <link rel="preload" href="./src/assets/css/pages/about.css" as="style" />
 
     <!-- Favicons -->
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="../assets/img/TS_32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./src/assets/img/TS_32x32.png" type="image/png" sizes="32x32" />
 
     <title>TecnoSur Paraná | Sobre Nosotros - Expertos en Refrigeración desde 2010</title>
     <link rel="canonical" href="https://tecnosurparana.vercel.app/sobre-nosotros.html" />
@@ -68,8 +68,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"
         media="print" onload="this.media='all'" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="../assets/css/base/common.css" rel="stylesheet" media="print" onload="this.media='all'" />
-    <link href="../assets/css/pages/about.css" rel="stylesheet" onload="this.media='all'" />
+    <link href="./src/assets/css/base/common.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="./src/assets/css/pages/about.css" rel="stylesheet" onload="this.media='all'" />
 
     <!-- Fallback sin JS -->
     <noscript>
@@ -77,8 +77,8 @@
             rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link href="../assets/css/base/common.css" rel="stylesheet" />
-        <link href="../assets/css/pages/about.css" rel="stylesheet" />
+        <link href="./src/assets/css/base/common.css" rel="stylesheet" />
+        <link href="./src/assets/css/pages/about.css" rel="stylesheet" />
     </noscript>
 
     <!-- Schema.org markup -->
@@ -179,42 +179,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-primary navbar-expand-md position-relative overflow-hidden">
-        <canvas id="snow-canvas"
-            style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;"></canvas>
-        <div class="container position-relative" style="z-index:3;">
-            <a class="navbar-brand" href="index.html">
-                <img src="../assets/img/penguin.webp" alt="Pingüino"
-                    style="height: 2rem; vertical-align: middle; margin-right: 0.5em;">
-                <span class="brand-nombre">
-                    <span class="brand-tecno">Tecno</span>
-                    <span class="brand-sur">Sur</span>
-                    <span class="brand-parana">Paraná</span>
-                </span>
-            </a>
-
-            <!-- Botón Hamburguesa -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Menú colapsable -->
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active px-3" aria-current="page" href="sobre-nosotros.html">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="contacto.html">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar se inserta acá -->
+    <div id="navbar-container"></div>
 
     <header class="hero-section">
         <div class="container hero-content">
@@ -405,9 +371,9 @@
     </script>
 
     <script type="module">
-        import { ComponentLoader } from '../js/core/components.js';
-        import { ModalPresupuesto } from '../js/modals/presupuesto.js';
-        import { initializeSnowfall } from '../js/components/utils/snow.js';
+        import { ComponentLoader } from './src/js/core/components.js';
+        import { ModalPresupuesto } from './src/js/modals/presupuesto.js';
+        import { initializeSnowfall } from './src/js/components/utils/snow.js';
 
         // Inicializa el modal y el formulario después de que todo esté cargado
         document.addEventListener('DOMContentLoaded', async () => {
